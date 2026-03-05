@@ -26,6 +26,8 @@ st.set_page_config(
 _DEFAULTS = {
     "phase": "input",           # input → review → posting → done
     "creative_direction": "",
+    "post_type_name": "",
+    "post_type_brief": "",
     "image_path": "",
     "caption": "",
     "attempt": 0,
@@ -103,14 +105,17 @@ def _preflight_checks() -> bool:
     return True
 
 
-def _run_generation(creative_direction: str):
+def _run_generation(creative_direction: str, post_type_brief: str):
     """Run the generation crew and extract image + caption."""
     from crew import build_generation_crew
     from utils.review import extract_image_and_caption
 
     gen_crew = build_generation_crew()
     gen_result = gen_crew.kickoff(
-        inputs={"creative_direction": creative_direction}
+        inputs={
+            "creative_direction": creative_direction,
+            "post_type_brief": post_type_brief,
+        }
     )
     log.info("[streamlit] Generation crew finished")
 
@@ -173,6 +178,13 @@ if st.session_state.phase == "input":
         st.session_state.error = None
         log.info("[streamlit] Direction: %s", creative_direction)
 
+        # ── Pick a random post type ───────────────────────────────────
+        from utils.post_types import pick_random_post_type
+        post_type = pick_random_post_type()
+        st.session_state.post_type_name = post_type["name"]
+        st.session_state.post_type_brief = post_type["brief"]
+        log.info("[streamlit] Post type: %s", post_type["name"])
+
         # ── Pre‑flight (only once per session) ────────────────────────
         if not st.session_state.preflight_done:
             with st.spinner("🔐 Running pre‑flight checks (Instagram + Gemini)…"):
@@ -189,7 +201,9 @@ if st.session_state.phase == "input":
             "This may take a couple of minutes."
         ):
             try:
-                image_path, caption = _run_generation(creative_direction)
+                image_path, caption = _run_generation(
+                    creative_direction, st.session_state.post_type_brief
+                )
             except Exception as exc:
                 st.session_state.error = f"❌ **Generation failed:** {exc}"
                 log.error("[streamlit] Generation error: %s", exc)
@@ -220,7 +234,10 @@ elif st.session_state.phase == "review":
 
     attempt = st.session_state.attempt
     max_a = st.session_state.max_attempts
-    st.info(f"Attempt **{attempt}** of **{max_a}**")
+    st.info(
+        f"Attempt **{attempt}** of **{max_a}**  ·  "
+        f"Post type: **{st.session_state.post_type_name}**"
+    )
 
     # ── Show image ────────────────────────────────────────────────────
     img_path = Path(st.session_state.image_path)
@@ -281,14 +298,21 @@ elif st.session_state.phase == "review":
         st.session_state.attempt += 1
         attempt = st.session_state.attempt
         max_a = st.session_state.max_attempts
-        log.info("[streamlit] Regenerating – attempt %d/%d", attempt, max_a)
+
+        # Pick a NEW random post type for variety on each regen
+        from utils.post_types import pick_random_post_type
+        post_type = pick_random_post_type()
+        st.session_state.post_type_name = post_type["name"]
+        st.session_state.post_type_brief = post_type["brief"]
+        log.info("[streamlit] Regenerating – attempt %d/%d – type: %s", attempt, max_a, post_type["name"])
 
         with st.spinner(
             f"🔄 Regenerating (attempt {attempt}/{max_a})…"
         ):
             try:
                 image_path, caption = _run_generation(
-                    st.session_state.creative_direction
+                    st.session_state.creative_direction,
+                    st.session_state.post_type_brief,
                 )
             except Exception as exc:
                 st.session_state.error = f"❌ **Regeneration failed:** {exc}"

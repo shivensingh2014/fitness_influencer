@@ -899,3 +899,137 @@ HASHTAGS: #deadliftform #backday #gymtips #fitnessmotivation #strengthtraining
 14:35:23 │ INFO     │ genfluence               │ [streamlit] Posting crew finished
 14:35:23 │ INFO     │ genfluence               │ [streamlit] Post result: SUCCESS: Posted to Instagram ✅
 URL: https://www.instagram.com/p/DVf0Ci9iK0k/
+14:51:15 │ INFO     │ genfluence               │ [streamlit] Direction: something around night out to a fine dine
+14:51:15 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🛍️ Athleisure / Outfit of the Day
+14:51:16 │ INFO     │ genfluence               │ [streamlit] Post type: 🛍️ Athleisure / Outfit of the Day
+14:51:16 │ INFO     │ genfluence               │ Config loaded
+14:51:16 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+14:51:16 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:51:16 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:51:16 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+14:51:16 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+14:51:16 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+14:51:20 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:51:25 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:51:30 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+14:51:30 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:51:32 │ INFO     │ genfluence               │ Loading agents…
+14:51:52 │ INFO     │ genfluence               │ All 5 agents loaded
+14:51:52 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:51:52 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:51:52 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:51:52 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:51:52 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:51:52 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:52:03 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A hyper-realistic, cinematic medium shot captures a female fitness influencer mid-stride on a rain-slicked cobblestone s
+14:52:03 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+14:52:03 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:52:03 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:52:17 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (2173099 bytes)
+14:52:17 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_145217.png (1591.0 KB)
+14:53:21 │ INFO     │ genfluence               │ [streamlit] Generation crew finished
+14:53:21 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Trading my workout gear for something a little more… *magnifique* ✨ From the gym to Parisian nights, proving that comfort and chic can absolutely coexist. Who says you can't go from sweat sesh to steak frites in style? 😉
+HASHTAGS: #ParisianStyle #AthleisureChic #FashionFitness #OOTDInspo #LuxuryLifestyle
+14:53:21 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_145217.png
+14:53:21 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_145217.png
+14:53:21 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Trading my workout gear for something a little more… *magnifique* ✨ From the gym to Parisian nights,
+14:53:35 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🧘 Wellness & Morning Routine
+14:53:35 │ INFO     │ genfluence               │ [streamlit] Regenerating – attempt 2/5 – type: 🧘 Wellness & Morning Routine
+14:53:35 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:53:35 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:53:35 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:53:35 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:53:35 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:53:35 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:53:38 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=influencer wellness morning routine night out fine dine aesthetic contrast
+14:53:38 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+14:53:38 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+14:53:40 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=influencer content ideas blending morning wellness routine with night out fine d
+14:53:40 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+14:53:40 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+14:53:56 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A hyper-realistic, cinematic medium shot captures a female fitness influencer in a tranquil, minimalist hotel suite balc
+14:53:56 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+14:53:56 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:53:56 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:54:07 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (1727870 bytes)
+14:54:07 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_145407.png (1264.9 KB)
+14:54:10 │ INFO     │ genfluence               │ [streamlit] Generation crew finished
+14:54:10 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Golden hour in Kyoto, but make it mindful. ✨ Soaking in these quiet moments and a little pre-dinner fuel before we head out to explore the city's culinary scene. It’s all about finding that balance, right? 💚
+HASHTAGS: #KyotoNights #WellnessJourney #MindfulMoments #SilkLoungewear #TravelAndDine
+14:54:10 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_145407.png
+14:54:10 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_145407.png
+14:54:10 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Golden hour in Kyoto, but make it mindful. ✨ Soaking in these quiet moments and a little pre-dinner 
+14:54:37 │ INFO     │ genfluence               │ Building POSTING crew…
+14:54:38 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:54:38 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:54:41 │ ERROR    │ genfluence               │ [streamlit] Posting error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+14:55:42 │ INFO     │ genfluence               │ [streamlit] Direction: in a night club wearing one peice with a wide angle selfie with friends
+14:55:42 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏋️ Workout Tutorial – Coach Tip
+14:55:42 │ INFO     │ genfluence               │ [streamlit] Post type: 🏋️ Workout Tutorial – Coach Tip
+14:55:42 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:55:46 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:55:51 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+14:55:51 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:55:54 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:55:54 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:55:54 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:55:54 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:55:54 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:55:54 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:56:01 │ ERROR    │ genfluence               │ [streamlit] Generation error: Invalid response from LLM call - None or empty.
+14:57:01 │ INFO     │ genfluence               │ [streamlit] Direction: in a night party in goa having a selfie with friends ,wide angle
+14:57:01 │ INFO     │ genfluence               │ [post_types] Randomly selected: ✈️ Travel Day – Behind the Scenes
+14:57:01 │ INFO     │ genfluence               │ [streamlit] Post type: ✈️ Travel Day – Behind the Scenes
+14:57:01 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:57:05 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:57:10 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+14:57:10 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:57:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:57:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:57:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:57:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:57:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:57:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:57:18 │ ERROR    │ genfluence               │ [streamlit] Generation error: Invalid response from LLM call - None or empty.

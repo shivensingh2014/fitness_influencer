@@ -1,5 +1,5 @@
 # 🧠 Genfluence – Codebase Context File
-> **Last updated:** March 5, 2026 (added Streamlit web UI)  
+> **Last updated:** March 5, 2026 (added post-type randomiser + diverse influencer persona)  
 > **Purpose:** Quick reference for AI assistants and developers. Read this FIRST before modifying any code.
 >
 > ⚠️ **MAINTENANCE RULE:** This file must be updated whenever the code structure changes.  
@@ -59,7 +59,8 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 │   ├── google_search_tool.py      ← @tool("google_search") – Gemini grounded search with cache
 │   ├── nano_banana_tool.py        ← @tool("generate_image") – Gemini image gen + character ref
 │   ├── instagram_tool.py          ← @tool("post_to_instagram") + preflight_login()
-│   └── review.py                  ← Human review UI: display_review(), ask_approval(), extract_image_and_caption()
+│   ├── review.py                  ← Human review UI: display_review(), ask_approval(), extract_image_and_caption()
+│   └── post_types.py              ← 12 diverse post categories + pick_random_post_type()
 │
 ├── assets/
 │   └── character.png              ← Base character reference image for face consistency
@@ -130,10 +131,10 @@ No extra agent or API call is needed – every agent sees the direction directly
 
 | Agent | File | Role | LLM | Tools | max_iter |
 |-------|------|------|-----|-------|----------|
-| **researcher** | `agents/researcher.py` | Researcher | gemini-2.5-flash-lite | google_search | 3 |
-| **prompt_creator** | `agents/prompt_creator.py` | Prompt Engineer | gemini-2.5-flash-lite | — | 3 |
+| **researcher** | `agents/researcher.py` | Trend & Culture Researcher | gemini-2.5-flash-lite | google_search | 3 |
+| **prompt_creator** | `agents/prompt_creator.py` | Prompt Engineer & Creative Director | gemini-2.5-flash-lite | — | 3 |
 | **image_generator** | `agents/image_generator.py` | AI Image Generator | gemini-2.5-flash-lite | generate_image | 3 |
-| **caption_creator** | `agents/caption_creator.py` | Social Media Copywriter | gemini-2.5-flash-lite | — | 3 |
+| **caption_creator** | `agents/caption_creator.py` | Social Media Copywriter & Brand Voice | gemini-2.5-flash-lite | — | 3 |
 | **instagram_poster** | `agents/instagram_poster.py` | Social Media Publisher | gemini-2.5-flash-lite | post_to_instagram | 3 |
 | ~~director~~ | `agents/director.py` | ~~Creative Director~~ | — | — | — (UNUSED) |
 

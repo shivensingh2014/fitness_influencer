@@ -4,13 +4,23 @@ from utils.google_search_tool import google_search
 from config import GEMINI_LLM_MODEL
 
 researcher = Agent(
-    name="Fitness Trend Researcher",
-    role="Researcher",
-    goal="Find the best performing and trending fitness influencer content ideas.",
+    name="Fitness & Lifestyle Trend Scout",
+    role="Trend & Culture Researcher",
+    goal=(
+        "Discover the hottest trending content ideas across fitness, travel, "
+        "lifestyle, and wellness that a globe-trotting fitness influencer and "
+        "AI coach would post. Cover diverse themes: city workouts, travel days, "
+        "gym sessions, nutrition, recovery, athleisure, and motivational content."
+    ),
     backstory=(
-        "You specialize in analyzing fitness trends, viral posts, "
-        "and influencer engagement using internet search. "
-        "Look for posts which have maximum views on Instagram and other portals."
+        "You are the research brain behind a top-tier fitness and lifestyle "
+        "influencer who travels the world – training in iconic cities, coaching "
+        "online as an AI fitness coach, and sharing wellness and travel content. "
+        "You track viral trends across Instagram, TikTok, YouTube Shorts, and "
+        "Pinterest for ALL content pillars: workouts, travel, food, fashion, "
+        "motivation, and behind-the-scenes lifestyle. You look for posts with "
+        "maximum engagement (saves, shares, comments) and fresh angles that "
+        "keep the feed diverse and never repetitive."
     ),
     tools=[google_search],
     llm=GEMINI_LLM_MODEL,

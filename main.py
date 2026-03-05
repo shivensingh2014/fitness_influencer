@@ -3,8 +3,9 @@
 
 Run this script to:
   0. 🎯  Give your creative direction (guides every agent)
+  0b.🎲  Randomly select a post type (travel, gym, wellness, etc.)
   1. 🔐  Verify Instagram login (fail-fast before burning API quota)
-  2. Research trending fitness content
+  2. Research trending fitness & lifestyle content
   3. Create an optimised Nano Banana image-generation prompt
   4. Generate a character-consistent AI photo
   5. Write an engaging caption + 5 viral hashtags
@@ -56,6 +57,13 @@ def main():
 
     log.info("Creative direction: %s", creative_direction)
     print(f"\n✅  Direction locked: \"{creative_direction}\"\n")
+
+    # ── Pick a random post type ───────────────────────────────────────
+    from utils.post_types import pick_random_post_type
+    post_type = pick_random_post_type()
+    log.info("Post type: %s", post_type["name"])
+    print(f"🎲  Post type: {post_type['name']}")
+    print(f"   {post_type['brief'].split(chr(10))[1][:80]}…\n")
 
     # ── Pre-flight checks ─────────────────────────────────────────────
     from config import GEMINI_API_KEY, BASE_CHARACTER_IMAGE, INSTAGRAM_USERNAME
@@ -142,14 +150,20 @@ def main():
     while attempt < MAX_ATTEMPTS:
         attempt += 1
         if attempt > 1:
-            print(f"\n🔄  Regenerating… (attempt {attempt}/{MAX_ATTEMPTS})\n")
-            log.info("Regeneration attempt %d/%d", attempt, MAX_ATTEMPTS)
+            # Pick a NEW random post type on each regeneration for variety
+            post_type = pick_random_post_type()
+            print(f"\n🔄  Regenerating… (attempt {attempt}/{MAX_ATTEMPTS})")
+            print(f"🎲  New post type: {post_type['name']}\n")
+            log.info("Regeneration attempt %d/%d – post type: %s", attempt, MAX_ATTEMPTS, post_type["name"])
 
         # ── Phase 1: Generate image + caption ─────────────────────────
         try:
             gen_crew = build_generation_crew()
             gen_result = gen_crew.kickoff(
-                inputs={"creative_direction": creative_direction}
+                inputs={
+                    "creative_direction": creative_direction,
+                    "post_type_brief": post_type["brief"],
+                }
             )
             log.info("Generation phase completed")
         except Exception as exc:
