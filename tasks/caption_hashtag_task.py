@@ -5,11 +5,14 @@ from crewai import Task
 def create_caption_hashtag_task(agent, context):
     return Task(
         description=(
-            "Based on the trend research and the image prompt (both provided "
-            "in context), write:\n\n"
+            "The creative director has given this direction for today's post:\n"
+            ">>> {creative_direction} <<<\n\n"
+            "Based on the creative direction, the trend research, and the "
+            "image prompt (all provided in context), write:\n\n"
             "1. ONE short, engaging Instagram caption (1-3 sentences) that "
-            "   hooks the viewer and encourages engagement (likes, comments, "
-            "   saves, shares). Use emojis sparingly but effectively.\n"
+            "   matches the tone/mood from the creative direction, hooks the "
+            "   viewer, and encourages engagement (likes, comments, saves, "
+            "   shares). Use emojis sparingly but effectively.\n"
             "2. Exactly 5 hashtags chosen for maximum reach and virality. "
             "   Mix broad reach tags with niche fitness tags.\n\n"
             "Format your output EXACTLY like this (so the next agent can "

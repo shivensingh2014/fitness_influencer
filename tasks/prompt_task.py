@@ -5,9 +5,13 @@ from crewai import Task
 def create_prompt_task(agent, context):
     return Task(
         description=(
-            "Using the trending content research provided in context, craft "
-            "a single, highly detailed image-generation prompt optimised for "
-            "Nano Banana (Gemini Image Generation). The prompt MUST:\n"
+            "The creative director has given this direction for today's post:\n"
+            ">>> {creative_direction} <<<\n\n"
+            "Using the trending content research provided in context AND the "
+            "creative direction above, craft a single, highly detailed "
+            "image-generation prompt optimised for Nano Banana (Gemini Image "
+            "Generation). The prompt MUST:\n"
+            "• Align with the creative direction given above\n"
             "• Describe the scene, pose, lighting, camera angle, and mood\n"
             "• Specify fitness attire and setting (gym, outdoor, studio, etc.)\n"
             "• Be written in natural language (no JSON, no code)\n"

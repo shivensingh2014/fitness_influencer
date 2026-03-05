@@ -753,3 +753,79 @@ HASHTAGS: #fitnessmotivation #goldenhour #outdoorworkout #squatjump #fitlife
 11:44:25 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
 11:44:50 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVfghgGiBo2/
 11:44:51 │ INFO     │ genfluence               │ Posting phase completed
+13:17:19 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+13:17:19 │ INFO     │ genfluence               │ Pipeline started
+13:18:00 │ INFO     │ genfluence               │ Creative direction: person standing in a garden helping people do yoga. The skin is very realistic
+13:18:00 │ INFO     │ genfluence               │ Config loaded
+13:18:00 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+13:18:00 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+13:18:00 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+13:18:00 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+13:18:00 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+13:18:00 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+13:18:00 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+13:18:05 │ INFO     │ genfluence               │ Instagram pre-flight login for @aisha_in_the_sky
+13:18:05 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+13:18:10 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+13:18:15 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+13:18:15 │ INFO     │ genfluence               │ Verifying Gemini API key & quota…
+13:18:16 │ INFO     │ genfluence               │ Quota check response: HTTP 200
+13:18:16 │ INFO     │ genfluence               │ Pre-flight checks passed
+13:18:16 │ INFO     │ genfluence               │ Loading agents…
+13:18:28 │ INFO     │ genfluence               │ All 5 agents loaded
+13:18:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:18:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:18:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:18:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:18:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:18:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:18:29 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness influencer content ideas instagram tiktok youtube yoga garden r
+13:18:29 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+13:18:29 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+13:18:37 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A serene, sun-drenched garden setting with lush greenery and blooming flowers, bathed in the warm, soft light of late af
+13:18:37 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+13:18:37 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+13:18:37 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+13:18:49 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (2208055 bytes)
+13:18:49 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_131849.png (1616.6 KB)
+13:19:51 │ INFO     │ genfluence               │ Generation phase completed
+13:19:51 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Find your flow, one pose at a time. ✨ Connecting with nature and community through yoga is pure magic. What's your favorite outdoor yoga spot?
+HASHTAGS: #yogainnature #outdoorfitness #yogacommunity #mindfulmovement #fitnessinspiration
+13:19:51 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_131849.png
+13:19:51 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_131849.png
+13:19:51 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Find your flow, one pose at a time. ✨ Connecting with nature and community through yoga is pure magi
+13:19:51 │ INFO     │ genfluence               │ [review] Opening image for preview: output\generated_20260305_131849.png
+13:21:18 │ INFO     │ genfluence               │ [review] User APPROVED the post
+13:21:18 │ INFO     │ genfluence               │ Building POSTING crew…
+13:21:18 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:21:18 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:21:19 │ INFO     │ genfluence               │ [instagram] Called with image_path=output/generated_20260305_131849.png
+13:21:19 │ DEBUG    │ genfluence               │ [instagram] Caption: Find your flow, one pose at a time. ✨ Connecting with nature and community through yoga is pure magic. What's your favorite outdoor yoga spot?
+
+#yogainnature #outdoorfitness #yogacommunity #mindfulmov
+13:21:19 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260305_131849.png (1616.6 KB)
+13:21:19 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+13:21:19 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+13:21:43 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVfrm7QCE6w/
+13:21:44 │ INFO     │ genfluence               │ Posting phase completed

@@ -2,13 +2,14 @@
 🚀 Genfluence – One-Click AI Fitness Influencer Pipeline
 
 Run this script to:
-  0. 🔐  Verify Instagram login (fail-fast before burning API quota)
-  1. Research trending fitness content
-  2. Create an optimised Nano Banana image-generation prompt
-  3. Generate a character-consistent AI photo
-  4. Write an engaging caption + 5 viral hashtags
-  5. 👁️  Review the image + caption (approve or regenerate)
-  6. Post everything to Instagram automatically
+  0. 🎯  Give your creative direction (guides every agent)
+  1. 🔐  Verify Instagram login (fail-fast before burning API quota)
+  2. Research trending fitness content
+  3. Create an optimised Nano Banana image-generation prompt
+  4. Generate a character-consistent AI photo
+  5. Write an engaging caption + 5 viral hashtags
+  6. 👁️  Review the image + caption (approve or regenerate)
+  7. Post everything to Instagram automatically
 """
 import sys
 import traceback
@@ -25,18 +26,36 @@ def main():
 ╔══════════════════════════════════════════════════════════╗
 ║        🚀  GENFLUENCE – AI Influencer Pipeline          ║
 ╠══════════════════════════════════════════════════════════╣
-║  0. 🔐  Verify Instagram login (fail-fast)              ║
-║  1. 🔍  Research trending fitness content               ║
-║  2. ✏️   Create Nano Banana image prompt                 ║
-║  3. 🎨  Generate AI photo (character-consistent)        ║
-║  4. 📝  Write engaging caption + 5 viral hashtags       ║
-║  5. 👁️   Review image + caption before posting           ║
-║  6. 📸  Post to Instagram (only after your approval)    ║
+║  0. 🎯  Your creative direction (guides the whole crew) ║
+║  1. 🔐  Verify Instagram login (fail-fast)              ║
+║  2. 🔍  Research trending fitness content               ║
+║  3. ✏️   Create Nano Banana image prompt                 ║
+║  4. 🎨  Generate AI photo (character-consistent)        ║
+║  5. 📝  Write engaging caption + 5 viral hashtags       ║
+║  6. 👁️   Review image + caption before posting           ║
+║  7. 📸  Post to Instagram (only after your approval)    ║
 ╚══════════════════════════════════════════════════════════╝
 """
     print(banner)
     log.info("═" * 50)
     log.info("Pipeline started")
+
+    # ── Step 0: Creative Direction ────────────────────────────────────
+    print("🎯  What's your vision for today's post?")
+    print("   Describe the vibe, setting, outfit, mood, caption tone – anything!")
+    print("   Examples:")
+    print('     • "Outdoor sunrise yoga on a mountain, peaceful and empowering"')
+    print('     • "Intense gym workout, dark moody lighting, motivational caption"')
+    print('     • "Beach run in summer sportswear, fun and energetic vibes"')
+    print()
+    creative_direction = input("👉  Your direction: ").strip()
+
+    if not creative_direction:
+        creative_direction = "Trending fitness content – choose the best idea based on research"
+        print(f"   (No direction given, using default: {creative_direction})")
+
+    log.info("Creative direction: %s", creative_direction)
+    print(f"\n✅  Direction locked: \"{creative_direction}\"\n")
 
     # ── Pre-flight checks ─────────────────────────────────────────────
     from config import GEMINI_API_KEY, BASE_CHARACTER_IMAGE, INSTAGRAM_USERNAME
@@ -129,7 +148,9 @@ def main():
         # ── Phase 1: Generate image + caption ─────────────────────────
         try:
             gen_crew = build_generation_crew()
-            gen_result = gen_crew.kickoff()
+            gen_result = gen_crew.kickoff(
+                inputs={"creative_direction": creative_direction}
+            )
             log.info("Generation phase completed")
         except Exception as exc:
             _handle_error(exc)
