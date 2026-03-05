@@ -291,3 +291,102 @@ HASHTAGS: #GymOOTD #ActivewearFashion #FitnessStyle #WorkoutMotivation #GymLife
 15:43:48 │ INFO     │ genfluence               │ [instagram] Uploading photo…
 15:44:04 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVYNhjLiGGf/
 15:44:05 │ INFO     │ genfluence               │ Posting phase completed
+17:18:44 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+17:18:44 │ INFO     │ genfluence               │ Pipeline started
+17:18:44 │ INFO     │ genfluence               │ Config loaded
+17:18:44 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+17:18:44 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+17:18:44 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+17:18:44 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+17:18:44 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+17:18:44 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+17:18:44 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+17:18:45 │ INFO     │ genfluence               │ Verifying Gemini API key & quota…
+17:18:46 │ INFO     │ genfluence               │ Quota check response: HTTP 200
+17:18:46 │ INFO     │ genfluence               │ Pre-flight checks passed
+17:18:56 │ INFO     │ genfluence               │ Loading agents…
+17:19:10 │ INFO     │ genfluence               │ All 5 agents loaded
+17:19:10 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+17:19:10 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+17:19:10 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+17:19:10 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+17:19:10 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+17:19:10 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+17:19:12 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness influencer content ideas instagram tiktok youtube viral reels c
+17:19:12 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+17:19:12 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+17:19:16 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A female fitness influencer with an athletic build is captured mid-pose during an intense outdoor workout session on a s
+17:19:16 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+17:19:16 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+17:19:16 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+17:19:28 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (1942047 bytes)
+17:19:28 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260302_171928.png (1421.8 KB)
+17:20:30 │ INFO     │ genfluence               │ Generation phase completed
+17:20:30 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Golden hour gains are the best gains! 🔥 Pushing limits and chasing that sunrise sweat. What's your favorite outdoor workout move? 👇
+HASHTAGS: #fitnessmotivation #outdoorworkout #kettlebelltraining #fitnessjourney #getstrong
+17:20:30 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260302_171928.png
+17:20:30 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260302_171928.png
+17:20:30 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Golden hour gains are the best gains! 🔥 Pushing limits and chasing that sunrise sweat. What's your f
+17:20:30 │ INFO     │ genfluence               │ [review] Opening image for preview: output\generated_20260302_171928.png
+19:23:43 │ INFO     │ genfluence               │ [review] User APPROVED the post
+19:23:43 │ INFO     │ genfluence               │ Building POSTING crew…
+19:23:43 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+19:23:43 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+19:23:47 │ INFO     │ genfluence               │ [instagram] Called with image_path=output\generated_20260302_171928.png
+19:23:47 │ DEBUG    │ genfluence               │ [instagram] Caption: Golden hour gains are the best gains! 🔥 Pushing limits and chasing that sunrise sweat. What's your favorite outdoor workout move? 👇
+
+#fitnessmotivation #outdoorworkout #kettlebelltraining #fitnessjour
+19:23:47 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260302_171928.png (1421.8 KB)
+19:23:47 │ INFO     │ genfluence               │ [instagram] Logging in as @aisha_in_the_sky…
+19:23:47 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+19:23:47 │ INFO     │ genfluence               │ [instagram] Login successful
+19:23:47 │ INFO     │ genfluence               │ [instagram] Uploading photo…
+19:23:47 │ ERROR    │ genfluence               │ [instagram] Upload FAILED: {"message":"login_required","status":"fail"}
+19:23:47 │ DEBUG    │ genfluence               │ [instagram] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\instagram_tool.py", line 81, in post_to_instagram
+    media = cl.photo_upload(path=str(img), caption=caption)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\instagrapi\mixins\photo.py", line 262, in photo_upload
+    upload_id, width, height = self.photo_rupload(path, upload_id)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\instagrapi\mixins\photo.py", line 218, in photo_rupload
+    raise PhotoNotUpload(response.text, response=response, **last_json)
+instagrapi.exceptions.PhotoNotUpload: {"message":"login_required","status":"fail"}
+
+19:23:48 │ INFO     │ genfluence               │ Posting phase completed
+11:10:57 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+11:10:57 │ INFO     │ genfluence               │ Pipeline started
+11:10:58 │ INFO     │ genfluence               │ Config loaded
+11:10:58 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+11:10:58 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+11:10:58 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+11:10:58 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+11:10:58 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+11:10:58 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+11:10:58 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+11:11:01 │ INFO     │ genfluence               │ Verifying Gemini API key & quota…
+11:11:02 │ INFO     │ genfluence               │ Quota check response: HTTP 200
+11:11:02 │ INFO     │ genfluence               │ Pre-flight checks passed
+11:11:30 │ INFO     │ genfluence               │ Loading agents…

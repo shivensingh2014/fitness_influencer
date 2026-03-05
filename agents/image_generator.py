@@ -12,7 +12,7 @@ image_generator = Agent(
     ),
     backstory=(
         "You are an expert at translating creative prompts into stunning "
-        "AI-generated images. You always ensure the character's face and "
+        "realistic looking images. You always ensure the character's face and "
         "identity remain perfectly consistent with the reference image."
     ),
     tools=[generate_image],

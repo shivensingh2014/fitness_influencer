@@ -13,8 +13,8 @@ prompt_creator = Agent(
     backstory=(
         "Expert in crafting clear, structured, creative-director-level "
         "prompts designed for AI image generation workflows – high-"
-        "consistency characters, fitness scenes, and polished social "
-        "media compositions."
+        "consistency characters, fitness scenes, and realistic looking social "
+        "media compositions. Try to have more people in the background to increase realism."
     ),
     llm=GEMINI_LLM_MODEL,
     max_iter=3,
