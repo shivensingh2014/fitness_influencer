@@ -829,3 +829,73 @@ HASHTAGS: #yogainnature #outdoorfitness #yogacommunity #mindfulmovement #fitness
 13:21:19 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
 13:21:43 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVfrm7QCE6w/
 13:21:44 │ INFO     │ genfluence               │ Posting phase completed
+14:32:21 │ INFO     │ genfluence               │ [streamlit] Direction: a pose focusing on correct posture for deadlift exercise in gym from back. Wearing shorts and sports wear for clear view of posture
+14:32:21 │ INFO     │ genfluence               │ Config loaded
+14:32:21 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+14:32:21 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:32:21 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:32:21 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+14:32:21 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+14:32:21 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+14:32:26 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:32:32 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:32:36 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+14:32:36 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:32:38 │ INFO     │ genfluence               │ Loading agents…
+14:33:01 │ INFO     │ genfluence               │ All 5 agents loaded
+14:33:01 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:33:01 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:33:01 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:33:01 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:33:01 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:33:01 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:33:03 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=Instagram fitness influencer deadlift posture back view viral reel shorts sports
+14:33:03 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+14:33:03 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+14:33:08 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A high-resolution, full-body shot from a slightly low angle, capturing the back view of a fitness influencer demonstrati
+14:33:08 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+14:33:08 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:33:08 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:33:21 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (1843167 bytes)
+14:33:21 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_143321.png (1349.4 KB)
+14:34:24 │ INFO     │ genfluence               │ [streamlit] Generation crew finished
+14:34:24 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Perfecting the deadlift starts with your back. Focus on that neutral spine, engage those glutes, and lift with control. Save this for your next session! 💪
+HASHTAGS: #deadliftform #backday #gymtips #fitnessmotivation #strengthtraining
+14:34:24 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_143321.png
+14:34:24 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_143321.png
+14:34:24 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Perfecting the deadlift starts with your back. Focus on that neutral spine, engage those glutes, and
+14:35:00 │ INFO     │ genfluence               │ Building POSTING crew…
+14:35:00 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:35:00 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:35:01 │ INFO     │ genfluence               │ [instagram] Called with image_path=output\generated_20260305_143321.png
+14:35:01 │ DEBUG    │ genfluence               │ [instagram] Caption: Perfecting the deadlift starts with your back. Focus on that neutral spine, engage those glutes, and lift with control. Save this post for your next session! 💪
+
+#deadliftform #backday #gymtips #fitnes
+14:35:01 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260305_143321.png (1349.4 KB)
+14:35:01 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+14:35:01 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+14:35:23 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVf0Ci9iK0k/
+14:35:23 │ INFO     │ genfluence               │ [streamlit] Posting crew finished
+14:35:23 │ INFO     │ genfluence               │ [streamlit] Post result: SUCCESS: Posted to Instagram ✅
+URL: https://www.instagram.com/p/DVf0Ci9iK0k/

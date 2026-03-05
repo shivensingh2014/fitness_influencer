@@ -1,5 +1,5 @@
 # 🧠 Genfluence – Codebase Context File
-> **Last updated:** March 5, 2026 (added creative direction input step)  
+> **Last updated:** March 5, 2026 (added Streamlit web UI)  
 > **Purpose:** Quick reference for AI assistants and developers. Read this FIRST before modifying any code.
 >
 > ⚠️ **MAINTENANCE RULE:** This file must be updated whenever the code structure changes.  
@@ -27,7 +27,8 @@ It researches trending fitness content, generates a character-consistent AI phot
 ```
 fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 │
-├── main.py                        ← Entry point: python main.py
+├── main.py                        ← CLI entry point: python main.py
+├── streamlit_app.py               ← Web UI entry point: streamlit run streamlit_app.py
 ├── crew.py                        ← CrewAI crew builders (generation + posting)
 ├── config.py                      ← All env vars, paths, API keys (reads .env)
 ├── llm.py                         ← LLM model string export (used by agents)
@@ -209,6 +210,7 @@ python-dotenv
 requests
 Pillow
 instagrapi
+streamlit
 ```
 
 ---
@@ -241,5 +243,24 @@ instagrapi
 cd fitness_influencer_crew
 pip install -r requirements.txt
 # Fill in .env with your keys
+
+# Option A – CLI (terminal)
 python main.py
+
+# Option B – Web UI (Streamlit)
+streamlit run streamlit_app.py
 ```
+
+### Streamlit UI (streamlit_app.py)
+
+A browser-based interface with 4 phases managed via `st.session_state`:
+
+| Phase | What happens |
+|-------|--------------|
+| **input** | Text area for creative direction → "Generate Post" button |
+| **review** | Shows generated image + editable caption → "Post to Instagram" / "Regenerate" |
+| **posting** | Runs posting crew with spinner |
+| **done** | Shows success message, post URL, balloons, "Create Another Post" button |
+
+Pre-flight checks (IG login + Gemini quota) run once per session on first generation.
+The review phase allows editing the caption before posting. Regeneration loops up to 5×.
