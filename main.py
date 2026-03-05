@@ -2,6 +2,7 @@
 🚀 Genfluence – One-Click AI Fitness Influencer Pipeline
 
 Run this script to:
+  0. 🔐  Verify Instagram login (fail-fast before burning API quota)
   1. Research trending fitness content
   2. Create an optimised Nano Banana image-generation prompt
   3. Generate a character-consistent AI photo
@@ -24,11 +25,12 @@ def main():
 ╔══════════════════════════════════════════════════════════╗
 ║        🚀  GENFLUENCE – AI Influencer Pipeline          ║
 ╠══════════════════════════════════════════════════════════╣
+║  0. 🔐  Verify Instagram login (fail-fast)              ║
 ║  1. 🔍  Research trending fitness content               ║
 ║  2. ✏️   Create Nano Banana image prompt                 ║
 ║  3. 🎨  Generate AI photo (character-consistent)        ║
 ║  4. 📝  Write engaging caption + 5 viral hashtags       ║
-║  5. �️   Review image + caption before posting           ║
+║  5. 👁️   Review image + caption before posting           ║
 ║  6. 📸  Post to Instagram (only after your approval)    ║
 ╚══════════════════════════════════════════════════════════╝
 """
@@ -54,10 +56,28 @@ def main():
         sys.exit(1)
     log.info("Character image OK: %s (%.1f KB)", char_img, char_img.stat().st_size / 1024)
 
-    if not INSTAGRAM_USERNAME:
+    # ── Step 0: Instagram login (fail-fast) ────────────────────────────
+    ig_enabled = bool(INSTAGRAM_USERNAME)
+    if not ig_enabled:
         log.warning("INSTAGRAM_USERNAME not set – posting will be skipped")
         print("⚠️  INSTAGRAM_USERNAME not set – the pipeline will run but skip posting.")
         print("   Set it in .env to enable auto-posting.\n")
+    else:
+        from utils.instagram_tool import preflight_login
+        print(f"🔐  Logging into Instagram as @{INSTAGRAM_USERNAME}…")
+        log.info("Instagram pre-flight login for @%s", INSTAGRAM_USERNAME)
+        try:
+            preflight_login()
+            print("✅  Instagram login successful!\n")
+        except Exception as _ig_exc:
+            log.error("Instagram pre-flight login FAILED: %s", _ig_exc)
+            print(f"\n❌  Instagram login FAILED: {_ig_exc}")
+            print("\n   Possible fixes:")
+            print("   1. Check INSTAGRAM_USERNAME and INSTAGRAM_PASSWORD in .env")
+            print("   2. Open Instagram in a browser / phone and log in manually")
+            print("      (clear any security challenge or 2FA prompt)")
+            print("   3. Then re-run this pipeline.")
+            sys.exit(1)
 
     # ── Verify Gemini API quota ────────────────────────────────────────
     import requests as _req
@@ -134,7 +154,7 @@ def main():
 
         if approved:
             # ── Phase 3: Post to Instagram ────────────────────────────
-            if not INSTAGRAM_USERNAME:
+            if not ig_enabled:
                 print("\n⚠️  INSTAGRAM_USERNAME not set – skipping posting.")
                 print(f"   📸  Image saved at: {image_path}")
                 print(f"   📝  Caption:\n{caption}")

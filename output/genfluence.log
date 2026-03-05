@@ -390,3 +390,366 @@ instagrapi.exceptions.PhotoNotUpload: {"message":"login_required","status":"fail
 11:11:02 │ INFO     │ genfluence               │ Quota check response: HTTP 200
 11:11:02 │ INFO     │ genfluence               │ Pre-flight checks passed
 11:11:30 │ INFO     │ genfluence               │ Loading agents…
+11:16:32 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+11:16:32 │ INFO     │ genfluence               │ Pipeline started
+11:16:32 │ INFO     │ genfluence               │ Config loaded
+11:16:32 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+11:16:32 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+11:16:32 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+11:16:32 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+11:16:32 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+11:16:32 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+11:16:32 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+11:16:33 │ INFO     │ genfluence               │ Verifying Gemini API key & quota…
+11:16:34 │ INFO     │ genfluence               │ Quota check response: HTTP 200
+11:16:34 │ INFO     │ genfluence               │ Pre-flight checks passed
+11:16:37 │ INFO     │ genfluence               │ Loading agents…
+11:17:12 │ INFO     │ genfluence               │ All 5 agents loaded
+11:17:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+11:17:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+11:17:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+11:17:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+11:17:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+11:17:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+11:17:13 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness influencer content ideas instagram tiktok youtube viral themes 
+11:17:13 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+11:17:13 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+11:17:15 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=latest trending fitness influencer content ideas instagram tiktok youtube viral 
+11:17:15 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+11:17:15 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+11:17:20 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A confident, athletic female fitness influencer in her late 20s is captured mid-workout in a bustling, sunlit modern gym
+11:17:20 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+11:17:20 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+11:17:20 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+11:17:35 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (1938047 bytes)
+11:17:35 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_111735.png (1418.9 KB)
+11:18:38 │ INFO     │ genfluence               │ Generation phase completed
+11:18:38 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Pushing limits and chasing that burn! 🔥 What's your favorite leg day move? Let me know below! 👇
+HASHTAGS: #fitnessmotivation #legday #workoutmotivation #gymlife #fitnessjourney
+11:18:38 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_111735.png
+11:18:38 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_111735.png
+11:18:38 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Pushing limits and chasing that burn! 🔥 What's your favorite leg day move? Let me know below! 👇
+
+#fi
+11:18:38 │ INFO     │ genfluence               │ [review] Opening image for preview: output\generated_20260305_111735.png
+11:18:52 │ INFO     │ genfluence               │ [review] User APPROVED the post
+11:18:52 │ INFO     │ genfluence               │ Building POSTING crew…
+11:18:52 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+11:18:52 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+11:18:56 │ INFO     │ genfluence               │ [instagram] Called with image_path=output\generated_20260305_111735.png
+11:18:56 │ DEBUG    │ genfluence               │ [instagram] Caption: Pushing limits and chasing that burn! 🔥 What's your favorite leg day move? Let me know below! 👇
+
+#fitnessmotivation #legday #workoutmotivation #gymlife #fitnessjourney
+11:18:56 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260305_111735.png (1418.9 KB)
+11:18:56 │ INFO     │ genfluence               │ [instagram] Logging in as @aisha_in_the_sky…
+11:18:56 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+11:18:56 │ INFO     │ genfluence               │ [instagram] Login successful
+11:18:56 │ INFO     │ genfluence               │ [instagram] Uploading photo…
+11:18:57 │ ERROR    │ genfluence               │ [instagram] Upload FAILED: {"message":"login_required","status":"fail"}
+11:18:57 │ DEBUG    │ genfluence               │ [instagram] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\instagram_tool.py", line 81, in post_to_instagram
+    media = cl.photo_upload(path=str(img), caption=caption)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\instagrapi\mixins\photo.py", line 262, in photo_upload
+    upload_id, width, height = self.photo_rupload(path, upload_id)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\instagrapi\mixins\photo.py", line 218, in photo_rupload
+    raise PhotoNotUpload(response.text, response=response, **last_json)
+instagrapi.exceptions.PhotoNotUpload: {"message":"login_required","status":"fail"}
+
+11:18:58 │ INFO     │ genfluence               │ Posting phase completed
+11:34:43 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+11:34:43 │ INFO     │ genfluence               │ Pipeline started
+11:34:43 │ INFO     │ genfluence               │ Config loaded
+11:34:43 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+11:34:43 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+11:34:43 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+11:34:43 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+11:34:43 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+11:34:43 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+11:34:43 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+11:34:46 │ INFO     │ genfluence               │ Instagram pre-flight login for @aisha_in_the_sky
+11:34:47 │ INFO     │ genfluence               │ [instagram] Performing FRESH login as @aisha_in_the_sky…
+11:35:00 │ ERROR    │ genfluence               │ Instagram pre-flight login FAILED: You can log in with your linked Facebook account. If you are sure that the password is correct, then change your IP address, because it is added to the blacklist of the Instagram Server
+11:41:01 │ INFO     │ genfluence               │ ══════════════════════════════════════════════════
+11:41:01 │ INFO     │ genfluence               │ Pipeline started
+11:41:01 │ INFO     │ genfluence               │ Config loaded
+11:41:01 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***enxU
+11:41:01 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+11:41:01 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+11:41:01 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = assets/character.png
+11:41:01 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = aisha_in_the_sky
+11:41:01 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = output
+11:41:01 │ INFO     │ genfluence               │ Character image OK: C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\assets\character.png (1348.9 KB)
+11:41:04 │ INFO     │ genfluence               │ Instagram pre-flight login for @aisha_in_the_sky
+11:41:04 │ INFO     │ genfluence               │ [instagram] Performing FRESH login as @aisha_in_the_sky…
+11:41:34 │ INFO     │ genfluence               │ [instagram] Fresh login successful – session saved
+11:41:40 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @aisha_in_the_sky
+11:41:40 │ INFO     │ genfluence               │ Verifying Gemini API key & quota…
+11:41:42 │ INFO     │ genfluence               │ Quota check response: HTTP 200
+11:41:42 │ INFO     │ genfluence               │ Pre-flight checks passed
+11:41:42 │ INFO     │ genfluence               │ Loading agents…
+11:41:56 │ INFO     │ genfluence               │ All 5 agents loaded
+11:41:56 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+11:41:56 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+11:41:56 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+11:41:56 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+11:41:56 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+11:41:56 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+11:41:58 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness influencer content ideas instagram tiktok youtube viral post th
+11:41:58 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+11:41:58 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agent\core.py", line 459, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agent\core.py", line 568, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 207, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 305, in _invoke_loop
+    return self._invoke_loop_native_tools()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 579, in _invoke_loop_native_tools
+    raise e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 498, in _invoke_loop_native_tools
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\utilities\agent_utils.py", line 372, in get_llm_response
+    raise e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\utilities\agent_utils.py", line 362, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 331, in call
+    return self._handle_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 1110, in _handle_completion
+    raise e from e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 1099, in _handle_completion
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\models.py", line 5041, in generate_content
+    return self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\models.py", line 3843, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1331, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1167, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1144, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\errors.py", line 110, in raise_for_response
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+11:41:59 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=top 5 viral fitness influencer content ideas on Instagram TikTok YouTube with en
+11:41:59 │ ERROR    │ genfluence               │ [google_search] FAILED: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+11:41:59 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agent\core.py", line 459, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agent\core.py", line 568, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 207, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 305, in _invoke_loop
+    return self._invoke_loop_native_tools()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 579, in _invoke_loop_native_tools
+    raise e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 498, in _invoke_loop_native_tools
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\utilities\agent_utils.py", line 372, in get_llm_response
+    raise e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\utilities\agent_utils.py", line 362, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 331, in call
+    return self._handle_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 1110, in _handle_completion
+    raise e from e
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\crewai\llms\providers\gemini\completion.py", line 1099, in _handle_completion
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\models.py", line 5041, in generate_content
+    return self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\models.py", line 3843, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1331, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1167, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\_api_client.py", line 1144, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\genai\errors.py", line 110, in raise_for_response
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 40, in google_search
+    model = genai.GenerativeModel(
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\generative_models.py", line 87, in __init__
+    self._tools = content_types.to_function_library(tools)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 917, in to_function_library
+    return FunctionLibrary(tools=lib)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 855, in __init__
+    tools = _make_tools(tools)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 898, in _make_tools
+    tools = [_make_tool(t) for t in tools]
+             ^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\env\Lib\site-packages\google\generativeai\types\content_types.py", line 831, in _make_tool
+    raise ValueError(
+ValueError: The only string that can be passed as a tool is 'code_execution', or one of the specified values for the `mode` parameter for google_search_retrieval.
+
+11:42:03 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A vibrant, sun-drenched outdoor gym scene at golden hour. The influencer is captured mid-action, performing a dynamic sq
+11:42:03 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (1348.9 KB, image/png)
+11:42:03 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+11:42:03 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+11:42:15 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (1901791 bytes)
+11:42:15 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260305_114215.png (1392.3 KB)
+11:43:17 │ INFO     │ genfluence               │ Generation phase completed
+11:43:17 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Golden hour gains! 🔥 Pushing my limits outdoors and soaking up that motivation. What's your favorite way to move when the sun starts to set?
+HASHTAGS: #fitnessmotivation #goldenhour #outdoorworkout #squatjump #fitlife
+11:43:17 │ INFO     │ genfluence               │ [review] Found latest image in output dir: output\generated_20260305_114215.png
+11:43:17 │ INFO     │ genfluence               │ [review] Extracted image_path: output\generated_20260305_114215.png
+11:43:17 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Golden hour gains! 🔥 Pushing my limits outdoors and soaking up that motivation. What's your favorite
+11:43:17 │ INFO     │ genfluence               │ [review] Opening image for preview: output\generated_20260305_114215.png
+11:44:24 │ INFO     │ genfluence               │ [review] User APPROVED the post
+11:44:24 │ INFO     │ genfluence               │ Building POSTING crew…
+11:44:24 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+11:44:24 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+11:44:25 │ INFO     │ genfluence               │ [instagram] Called with image_path=output\generated_20260305_114215.png
+11:44:25 │ DEBUG    │ genfluence               │ [instagram] Caption: Golden hour gains! 🔥 Pushing my limits outdoors and soaking up that motivation. What's your favorite way to move when the sun starts to set?
+
+#fitnessmotivation #goldenhour #outdoorworkout #squatjump 
+11:44:25 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260305_114215.png (1392.3 KB)
+11:44:25 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+11:44:25 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+11:44:50 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/DVfghgGiBo2/
+11:44:51 │ INFO     │ genfluence               │ Posting phase completed
