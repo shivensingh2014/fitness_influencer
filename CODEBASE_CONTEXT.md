@@ -14,11 +14,11 @@
 It researches trending fitness content, generates a character-consistent AI photo, writes a viral caption + hashtags, lets the user review everything, and posts to Instagram — all in one `python main.py` run.
 
 **Tech stack:**
-- **Python 3.13** (venv at `../env/`)
+- **Python 3.13** (`.venv` at repo root, managed by [uv](https://docs.astral.sh/uv/))
 - **CrewAI** – multi-agent orchestration framework
 - **Google Gemini API** – powers both the LLM agents (`gemini-2.5-flash-lite` via litellm) and image generation (`gemini-2.5-flash-image` aka "Nano Banana")
 - **instagrapi** – Instagram Private API client for posting
-- **OS:** Windows (user's machine)
+- **OS:** Windows & macOS (cross-platform)
 
 ---
 
@@ -38,6 +38,16 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 ├── .env                           ← Secrets (GEMINI_API_KEY, IG creds, etc.)
 ├── .ig_session.json               ← Cached Instagram session (auto-generated, gitignored)
 ├── CODEBASE_CONTEXT.md            ← THIS FILE
+├── README.md                      ← Full installation & usage guide
+├── setup-hooks.sh                 ← macOS/Linux: run once to enable pre-commit hook
+├── setup-hooks.ps1                ← Windows: run once to enable pre-commit hook
+│
+├── .githooks/                     ← Git hooks (committed, shared across team)
+│   ├── pre-commit                 ← Bash: runs pytest before every commit
+│   └── pre-commit.ps1             ← PowerShell: same hook for Windows
+│
+├── .github/workflows/             ← GitHub Actions CI
+│   └── tests.yml                  ← Runs tests on push/PR (Win + Mac + Linux)
 │
 ├── agents/                        ← CrewAI Agent definitions (one per file)
 │   ├── researcher.py              ← Fitness Trend Researcher (uses google_search tool)
@@ -61,6 +71,14 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 │   ├── instagram_tool.py          ← @tool("post_to_instagram") + preflight_login()
 │   ├── review.py                  ← Human review UI: display_review(), ask_approval(), extract_image_and_caption()
 │   └── post_types.py              ← 12 diverse post categories + pick_random_post_type()
+│
+├── tests/                         ← pytest test suite (89 tests)
+│   ├── conftest.py                ← Shared fixtures, env isolation, tmp dirs
+│   ├── test_config.py             ← Config loading, logger, llm module tests
+│   ├── test_agents.py             ← All 5 agent definitions + cross-cutting checks
+│   ├── test_tasks.py              ← All 5 task factories + placeholder/output validation
+│   ├── test_tools.py              ← google_search, nano_banana, instagram_tool, review, post_types
+│   └── test_crew.py               ← Crew assembly integration tests (generation, posting, legacy)
 │
 ├── assets/
 │   └── character.png              ← Base character reference image for face consistency
@@ -201,18 +219,25 @@ Config also exports: `BASE_DIR`, `ASSETS_DIR`, `OUTPUT_DIR` (as Path objects, au
 
 ---
 
-## 📦 Dependencies (requirements.txt)
+## 📦 Dependencies
+
+All deps live in the **repo-root** `requirements.txt` (both per-project files reference it via `-r ../requirements.txt`).  
+Managed with **uv** — see repo-root `README.md` for setup instructions.
 
 ```
-crewai>=1.9.0
-crewai-tools>=1.9.0
+crewai==1.9.3
+crewai-tools==1.9.3
 google-generativeai>=0.8.0
-python-dotenv
-requests
-Pillow
-instagrapi
+litellm>=1.0.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+Pillow>=10.0.0
+instagrapi==2.3.0
+pydantic==2.11.10
 streamlit
 ```
+
+Full lock file: `../requirements-lock.txt`
 
 ---
 
@@ -241,9 +266,16 @@ streamlit
 ## 🚀 How to Run
 
 ```bash
+# From repo root (genfluence/):
+uv venv .venv --python 3.13
+# Activate:
+#   macOS/Linux : source .venv/bin/activate
+#   Windows PS  : .venv\Scripts\Activate.ps1
+uv pip install -r requirements.txt --override overrides.txt
+
+# Fill in fitness_influencer_crew/.env with your keys
+
 cd fitness_influencer_crew
-pip install -r requirements.txt
-# Fill in .env with your keys
 
 # Option A – CLI (terminal)
 python main.py
@@ -265,3 +297,64 @@ A browser-based interface with 4 phases managed via `st.session_state`:
 
 Pre-flight checks (IG login + Gemini quota) run once per session on first generation.
 The review phase allows editing the caption before posting. Regeneration loops up to 5×.
+
+---
+
+## 🧪 Testing (tests/)
+
+**Run all 89 tests:**
+```bash
+cd fitness_influencer_crew
+python -m pytest tests/ -v
+```
+
+**Test coverage:**
+```bash
+python -m pytest tests/ --cov=. --cov-report=term-missing
+```
+
+### Test Structure
+
+| File | What it covers | # Tests |
+|------|---------------|---------|
+| `test_config.py` | Config loading, env vars, logger, llm module | 11 |
+| `test_agents.py` | All 5 agents: type, tools, role, delegation, max_iter + cross-cutting | 24 |
+| `test_tasks.py` | All 5 task factories: type, placeholders, expected output, context | 15 |
+| `test_tools.py` | google_search, nano_banana, instagram, review, post_types (all mocked) | 24 |
+| `test_crew.py` | Crew assembly: generation (4+4), posting (1+1), legacy (5+5) | 15 |
+
+### Key Design Decisions
+- **conftest.py** sets safe dummy env vars via `monkeypatch` → no real API keys ever touched
+- All external calls (Gemini, Instagram) are **mocked** → tests run offline and fast (~17s)
+- Agent/crew tests use **real CrewAI objects** (not mocks) to catch pydantic validation regressions
+- `tmp_path` fixture isolates output files per test
+
+### Automatic Test Runs (CI / Pre-commit)
+
+Tests run **automatically** in two places:
+
+| Trigger | Mechanism | Where |
+|---------|-----------|-------|
+| Every `git commit` | Pre-commit hook (`.githooks/pre-commit`) | Local machine |
+| Every push / PR to main | GitHub Actions (`.github/workflows/tests.yml`) | GitHub CI (Win + Mac + Linux) |
+
+**One-time setup** (run once after cloning):
+```bash
+# macOS / Linux
+bash setup-hooks.sh
+
+# Windows PowerShell
+.\setup-hooks.ps1
+```
+This tells git to use `.githooks/` as the hooks directory. The hook runs `pytest tests/ -q` and **blocks the commit if any test fails**.
+
+To skip tests for a quick WIP commit: `git commit --no-verify`
+
+### When to Run Tests Manually
+- **After upgrading** crewai, instagrapi, or pydantic (dependency validation tests)
+- **After adding** a new agent, task, or tool (add matching test file too)
+
+---
+
+**Last updated:** March 9, 2026  
+**Maintainer:** Update this file whenever you modify agents, tasks, tools, or pipeline flow.

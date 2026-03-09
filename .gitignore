@@ -1,2 +1,11 @@
 .env
+.ig_session.json
 *.png
+output/
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+.DS_Store
+Thumbs.db

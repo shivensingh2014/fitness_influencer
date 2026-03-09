@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# ──────────────────────────────────────────────────────
+# Genfluence – Git pre-commit hook
+# Runs the pytest test suite before every commit.
+# If any test fails the commit is BLOCKED.
+#
+# Install once:  git config core.hooksPath .githooks
+# Or run:        bash setup-hooks.sh   (or .\setup-hooks.ps1 on Windows)
+# ──────────────────────────────────────────────────────
+
+set -e
+
+echo ""
+echo "🧪 Running test suite before commit…"
+echo "──────────────────────────────────────"
+
+# Determine the repo root (where this script lives → ../)
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Try to find a usable python WITH pytest.  Priority:
+#   1. Repo-root .venv (uv-managed, one level up)
+#   2. Project-local .venv
+#   3. Activated venv / system python (only if pytest is importable)
+#   4. System python3
+PY=""
+for candidate in \
+    "$REPO_ROOT/../.venv/Scripts/python.exe" \
+    "$REPO_ROOT/../.venv/bin/python" \
+    "$REPO_ROOT/.venv/Scripts/python.exe" \
+    "$REPO_ROOT/.venv/bin/python"; do
+    if [ -f "$candidate" ]; then
+        PY="$candidate"
+        break
+    fi
+done
+
+# Fall back to system python / python3 if no venv found
+if [ -z "$PY" ]; then
+    if command -v python &>/dev/null && python -c "import pytest" 2>/dev/null; then
+        PY=python
+    elif command -v python3 &>/dev/null && python3 -c "import pytest" 2>/dev/null; then
+        PY=python3
+    else
+        echo "❌ Could not find Python with pytest. Skipping tests."
+        exit 0
+    fi
+fi
+
+# Run pytest from the project directory
+cd "$REPO_ROOT"
+"$PY" -m pytest tests/ -q --tb=short
+
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+    echo ""
+    echo "❌ Tests failed — commit BLOCKED."
+    echo "   Fix the failing tests then try again."
+    exit 1
+fi
+
+echo ""
+echo "✅ All tests passed — committing."
+exit 0

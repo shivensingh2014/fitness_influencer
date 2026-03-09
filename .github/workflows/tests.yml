@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────────────
+# Genfluence – CI: Run tests on every push & PR
+# ──────────────────────────────────────────────────────
+name: Tests
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.13"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          uv venv .venv
+          uv pip install -r requirements.txt --override overrides.txt
+
+      - name: Run tests
+        working-directory: fitness_influencer_crew
+        shell: bash
+        env:
+          GEMINI_API_KEY: "test-dummy-key"
+          IG_USERNAME: "test_user"
+          IG_PASSWORD: "test_pass"
+        run: |
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            ../.venv/Scripts/python.exe -m pytest tests/ -v --tb=short
+          else
+            ../.venv/bin/python -m pytest tests/ -v --tb=short
+          fi
