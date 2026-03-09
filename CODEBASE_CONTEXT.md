@@ -75,13 +75,14 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 │   ├── review.py                  ← Human review UI: display_review(), ask_approval(), extract_image_and_caption()
 │   └── post_types.py              ← 12 diverse post categories + pick_random_post_type()
 │
-├── tests/                         ← pytest test suite (89 tests)
+├── tests/                         ← pytest test suite (105 tests)
 │   ├── conftest.py                ← Shared fixtures, env isolation, tmp dirs
 │   ├── test_config.py             ← Config loading, logger, llm module tests
 │   ├── test_agents.py             ← All 5 agent definitions + cross-cutting checks
 │   ├── test_tasks.py              ← All 5 task factories + placeholder/output validation
 │   ├── test_tools.py              ← google_search, nano_banana, instagram_tool, review, post_types
-│   └── test_crew.py               ← Crew assembly integration tests (generation, posting, legacy)
+│   ├── test_crew.py               ← Crew assembly integration tests (generation, posting, legacy)
+│   └── test_streamlit_app.py      ← Streamlit UI: import, session state, helpers, preflight
 │
 ├── assets/
 │   └── character.png              ← Base character reference image for face consistency
@@ -304,7 +305,7 @@ The review phase allows editing the caption before posting. Regeneration loops u
 
 ## 🧪 Testing (tests/)
 
-**Run all 89 tests:**
+**Run all 105 tests:**
 ```bash
 cd fitness_influencer_crew
 python -m pytest tests/ -v
@@ -324,11 +325,13 @@ python -m pytest tests/ --cov=. --cov-report=term-missing
 | `test_tasks.py` | All 5 task factories: type, placeholders, expected output, context | 15 |
 | `test_tools.py` | google_search, nano_banana, instagram, review, post_types (all mocked) | 24 |
 | `test_crew.py` | Crew assembly: generation (4+4), posting (1+1), legacy (5+5) | 15 |
+| `test_streamlit_app.py` | Streamlit UI: import, session state defaults, helper functions, preflight checks | 16 |
 
 ### Key Design Decisions
 - **conftest.py** sets safe dummy env vars via `monkeypatch` → no real API keys ever touched
-- All external calls (Gemini, Instagram) are **mocked** → tests run offline and fast (~17s)
+- All external calls (Gemini, Instagram) are **mocked** → tests run offline and fast (~14s)
 - Agent/crew tests use **real CrewAI objects** (not mocks) to catch pydantic validation regressions
+- Streamlit tests mock the entire `st` module to avoid launching a real server
 - `tmp_path` fixture isolates output files per test
 
 ### Automatic Test Runs (CI / Pre-commit)

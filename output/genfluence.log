@@ -1927,3 +1927,599 @@ requests.exceptions.RequestException: Connection refused
 13:53:15 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
 13:53:15 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
 13:53:15 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/ABC123XYZ/
+14:03:11 │ INFO     │ genfluence               │ Config loaded
+14:03:11 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:03:11 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:03:11 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:03:11 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_is_agent_instance0\character.png
+14:03:11 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = test_user
+14:03:11 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_is_agent_instance0\output
+14:03:12 │ INFO     │ genfluence               │ Test message from pytest – ignore
+14:03:12 │ INFO     │ genfluence               │ Loading agents…
+14:03:12 │ INFO     │ genfluence               │ All 5 agents loaded
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:03:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:03:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:03:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:03:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:03:12 │ INFO     │ genfluence               │ Building POSTING crew…
+14:03:12 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:03:12 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:03:12 │ INFO     │ genfluence               │ Building POSTING crew…
+14:03:12 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:03:12 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:03:12 │ INFO     │ genfluence               │ Building POSTING crew…
+14:03:12 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:03:12 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:03:12 │ INFO     │ genfluence               │ Building POSTING crew…
+14:03:12 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:03:12 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:03:12 │ INFO     │ genfluence               │ Building POSTING crew…
+14:03:12 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:03:12 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:03:12 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:03:12 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:03:13 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🧘 Wellness & Morning Routine
+14:03:13 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🌄 Outdoor Adventure Fitness
+14:03:13 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+Generated image at C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_extract_image_and_caption0\output\generated_20260309_120000.png
+
+CAPTION: Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+HASHTAGS: #fitness #travel #tokyo #motivation #grind
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted image_path: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_extract_image_and_caption0\output\generated_20260309_120000.png
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+#fitness #travel #
+14:03:13 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Test caption
+HASHTAGS: #test #pytest
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Test caption
+
+#test #pytest
+14:03:13 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Morning workout in Bali 🌴
+HASHTAGS: #bali #fitness #travel #morning #wellness
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+14:03:13 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Morning workout in Bali 🌴
+
+#bali #fitness #travel #morning #wellness
+14:03:13 │ INFO     │ genfluence               │ [review] User APPROVED the post
+14:03:13 │ INFO     │ genfluence               │ [review] User REJECTED – will regenerate
+14:03:13 │ INFO     │ genfluence               │ [review] User APPROVED the post
+14:03:13 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness 2026
+14:03:13 │ INFO     │ genfluence               │ [google_search] Success – response length: 67 chars
+14:03:13 │ DEBUG    │ genfluence               │ [google_search] Response preview: Top 5 fitness trends: HIIT, yoga, cold plunge, zone 2, calisthenics
+14:03:13 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=cache test query xyz123
+14:03:13 │ INFO     │ genfluence               │ [google_search] Success – response length: 13 chars
+14:03:13 │ DEBUG    │ genfluence               │ [google_search] Response preview: Cached result
+14:03:13 │ INFO     │ genfluence               │ [google_search] CACHE HIT for: cache test query xyz123
+14:03:13 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=will fail query abc789
+14:03:13 │ ERROR    │ genfluence               │ [google_search] FAILED: API quota exceeded
+14:03:13 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 44, in google_search
+    resp = model.generate_content(
+        [{"role": "user", "parts": [{"text": f"Search the web and summarize: {query}"}]}]
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+Exception: API quota exceeded
+
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A fitness influencer doing yoga on a rooftop
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (2 bytes)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260309_140313.png (0.1 KB)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 429 (3 bytes)
+14:03:13 │ ERROR    │ genfluence               │ [generate_image] RATE LIMITED (429):
+Quota exhausted
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 500 (3 bytes)
+14:03:13 │ ERROR    │ genfluence               │ [generate_image] API ERROR HTTP 500:
+Internal server error
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:03:13 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:03:13 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:03:13 │ ERROR    │ genfluence               │ [generate_image] NETWORK ERROR: Connection refused
+14:03:13 │ DEBUG    │ genfluence               │ [generate_image] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\nano_banana_tool.py", line 85, in generate_image
+    resp = requests.post(
+        url,
+    ...<2 lines>...
+        timeout=180,
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: Connection refused
+
+14:03:13 │ INFO     │ genfluence               │ Config loaded
+14:03:13 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:03:13 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:03:13 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:03:13 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_preflight_login_missing_c0\character.png
+14:03:13 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = (not set)
+14:03:13 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_preflight_login_missing_c0\output
+14:03:13 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_post_to_instagram_file_no0\nonexistent.png
+14:03:13 │ DEBUG    │ genfluence               │ [instagram] Caption: test caption
+14:03:13 │ ERROR    │ genfluence               │ [instagram] Image file NOT FOUND: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_post_to_instagram_file_no0\nonexistent.png
+14:03:13 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-5\test_post_to_instagram_success0\output\generated_20260309_120000.png
+14:03:13 │ DEBUG    │ genfluence               │ [instagram] Caption: Test caption #fitness
+14:03:13 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260309_120000.png (0.2 KB)
+14:03:13 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+14:03:13 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+14:03:13 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/ABC123XYZ/
+14:07:12 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570180851968'>
+14:07:12 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🌃 Night City Lifestyle
+14:07:12 │ INFO     │ genfluence               │ [streamlit] Post type: 🌃 Night City Lifestyle
+14:07:12 │ INFO     │ genfluence               │ Config loaded
+14:07:12 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:07:12 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:07:12 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:07:12 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-7\test_module_is_importable0\character.png
+14:07:12 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = test_user
+14:07:12 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-7\test_module_is_importable0\output
+14:07:18 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:07:24 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:07:28 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:07:28 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:07:28 │ INFO     │ genfluence               │ Loading agents…
+14:07:33 │ INFO     │ genfluence               │ All 5 agents loaded
+14:07:33 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:07:33 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:07:33 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:07:33 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:07:33 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:07:33 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:07:33 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:07:34 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570939862528'>
+14:07:34 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏙️ Travel Fitness – Iconic City Workout
+14:07:34 │ INFO     │ genfluence               │ [streamlit] Post type: 🏙️ Travel Fitness – Iconic City Workout
+14:07:34 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:07:41 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:07:47 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:07:47 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:07:47 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:07:47 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:07:47 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:07:47 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:07:47 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:07:47 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:07:47 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:07:47 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570958565664'>
+14:07:47 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🔥 Transformation / Motivational
+14:07:47 │ INFO     │ genfluence               │ [streamlit] Post type: 🔥 Transformation / Motivational
+14:07:47 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:07:53 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:07:58 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:07:58 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:07:59 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:07:59 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:07:59 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:07:59 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:07:59 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:07:59 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:07:59 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:07:59 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570959412592'>
+14:07:59 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🧘 Wellness & Morning Routine
+14:07:59 │ INFO     │ genfluence               │ [streamlit] Post type: 🧘 Wellness & Morning Routine
+14:07:59 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:08:03 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:08:08 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:08:08 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:08:08 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:08:08 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:08:08 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:08:08 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:08:08 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:08:08 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:08:08 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:08:08 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570959423008'>
+14:08:08 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🛍️ Athleisure / Outfit of the Day
+14:08:08 │ INFO     │ genfluence               │ [streamlit] Post type: 🛍️ Athleisure / Outfit of the Day
+14:08:08 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:08:14 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:08:19 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:08:19 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:08:19 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:08:19 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:08:19 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:08:19 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:08:19 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:08:19 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:08:19 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:08:19 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570959415280'>
+14:08:19 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🥗 Healthy Meal Prep & Nutrition
+14:08:19 │ INFO     │ genfluence               │ [streamlit] Post type: 🥗 Healthy Meal Prep & Nutrition
+14:08:19 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:08:25 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:08:31 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:08:31 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:08:31 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:08:31 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:08:31 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:08:31 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:08:31 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:08:31 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:08:31 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:08:31 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570958563312'>
+14:08:31 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🛍️ Athleisure / Outfit of the Day
+14:08:31 │ INFO     │ genfluence               │ [streamlit] Post type: 🛍️ Athleisure / Outfit of the Day
+14:08:31 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:08:37 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:08:42 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:08:42 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:08:42 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:08:42 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:08:42 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:08:42 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:08:42 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:08:42 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:08:42 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:08:42 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570939859168'>
+14:08:42 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏋️ Workout Tutorial – Coach Tip
+14:08:42 │ INFO     │ genfluence               │ [streamlit] Post type: 🏋️ Workout Tutorial – Coach Tip
+14:08:42 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:08:48 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:08:52 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:08:52 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:08:52 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:08:52 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:08:52 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:08:52 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:08:52 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:08:52 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:08:52 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:08:52 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570960155584'>
+14:08:52 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏙️ Travel Fitness – Iconic City Workout
+14:08:52 │ INFO     │ genfluence               │ [streamlit] Post type: 🏙️ Travel Fitness – Iconic City Workout
+14:08:52 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:00 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:09:06 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:09:06 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:09:06 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:09:06 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:09:06 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:09:06 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:09:06 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:09:06 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:09:06 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:09:06 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570939856816'>
+14:09:06 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🔥 Transformation / Motivational
+14:09:06 │ INFO     │ genfluence               │ [streamlit] Post type: 🔥 Transformation / Motivational
+14:09:06 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:13 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:09:18 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:09:18 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:09:18 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:09:18 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:09:18 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:09:18 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:09:18 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:09:18 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:09:18 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:09:18 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570958560624'>
+14:09:18 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏙️ Travel Fitness – Iconic City Workout
+14:09:18 │ INFO     │ genfluence               │ [streamlit] Post type: 🏙️ Travel Fitness – Iconic City Workout
+14:09:18 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:22 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:09:29 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:09:29 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:09:29 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:09:29 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:09:29 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:09:29 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:09:29 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:09:29 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:09:29 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:09:29 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570958573056'>
+14:09:29 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🥗 Healthy Meal Prep & Nutrition
+14:09:29 │ INFO     │ genfluence               │ [streamlit] Post type: 🥗 Healthy Meal Prep & Nutrition
+14:09:29 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:34 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:09:38 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:09:38 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:09:39 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:09:39 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:09:39 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:09:39 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:09:39 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:09:39 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:09:39 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:09:39 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570959381168'>
+14:09:39 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏋️ Workout Tutorial – Coach Tip
+14:09:39 │ INFO     │ genfluence               │ [streamlit] Post type: 🏋️ Workout Tutorial – Coach Tip
+14:09:39 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:44 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:09:50 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:09:50 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:09:50 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:09:50 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:09:50 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:09:50 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:09:50 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:09:50 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:09:50 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:09:50 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570958558944'>
+14:09:50 │ INFO     │ genfluence               │ [post_types] Randomly selected: 💪 Intense Gym Session – AI Coach Mode
+14:09:50 │ INFO     │ genfluence               │ [streamlit] Post type: 💪 Intense Gym Session – AI Coach Mode
+14:09:50 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:09:56 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:10:00 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:10:00 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:10:01 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:10:01 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:10:01 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:10:01 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:10:01 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:10:01 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:10:01 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:10:01 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570939849760'>
+14:10:01 │ INFO     │ genfluence               │ [post_types] Randomly selected: ✈️ Travel Day – Behind the Scenes
+14:10:01 │ INFO     │ genfluence               │ [streamlit] Post type: ✈️ Travel Day – Behind the Scenes
+14:10:01 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:10:06 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:10:12 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:10:12 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:10:12 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:10:12 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:10:12 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:10:12 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:10:12 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:10:12 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:10:12 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:10:12 │ INFO     │ genfluence               │ [streamlit] Direction: <MagicMock name='mock.text_area().strip()' id='1570959412928'>
+14:10:12 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏙️ Travel Fitness – Iconic City Workout
+14:10:12 │ INFO     │ genfluence               │ [streamlit] Post type: 🏙️ Travel Fitness – Iconic City Workout
+14:10:12 │ DEBUG    │ genfluence               │ [instagram] Loading saved session from C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\.ig_session.json
+14:10:19 │ INFO     │ genfluence               │ [instagram] Resumed saved session OK
+14:10:23 │ INFO     │ genfluence               │ [instagram] Pre-flight login verified for @test_user
+14:10:23 │ INFO     │ genfluence               │ [streamlit] Instagram login OK
+14:10:23 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:10:23 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:10:23 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:10:23 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:10:23 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:10:23 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:10:23 │ ERROR    │ genfluence               │ [streamlit] Generation error: Error interpolating description: Invalid value for key 'creative_direction': Unsupported type MagicMock in inputs. Only str, int, float, bool, dict, and list are allowed.
+14:21:58 │ INFO     │ genfluence               │ Config loaded
+14:21:58 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:21:58 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:21:58 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:21:58 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-8\test_fails_without_gemini_key0\character.png
+14:21:58 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = test_user
+14:21:58 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-8\test_fails_without_gemini_key0\output
+14:25:26 │ INFO     │ genfluence               │ Config loaded
+14:25:26 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:25:26 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:25:26 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:25:26 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_is_agent_instance0\character.png
+14:25:26 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = test_user
+14:25:26 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_is_agent_instance0\output
+14:25:28 │ INFO     │ genfluence               │ Test message from pytest – ignore
+14:25:28 │ INFO     │ genfluence               │ Loading agents…
+14:25:28 │ INFO     │ genfluence               │ All 5 agents loaded
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+14:25:28 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+14:25:28 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+14:25:28 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+14:25:28 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+14:25:28 │ INFO     │ genfluence               │ Building POSTING crew…
+14:25:28 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:25:28 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:25:28 │ INFO     │ genfluence               │ Building POSTING crew…
+14:25:28 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:25:28 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:25:28 │ INFO     │ genfluence               │ Building POSTING crew…
+14:25:28 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:25:28 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:25:28 │ INFO     │ genfluence               │ Building POSTING crew…
+14:25:28 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:25:28 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:25:28 │ INFO     │ genfluence               │ Building POSTING crew…
+14:25:28 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+14:25:28 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+14:25:28 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:25:28 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+14:25:29 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🛍️ Athleisure / Outfit of the Day
+14:25:29 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🧘 Wellness & Morning Routine
+14:25:29 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+Generated image at C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_extract_image_and_caption0\output\generated_20260309_120000.png
+
+CAPTION: Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+HASHTAGS: #fitness #travel #tokyo #motivation #grind
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted image_path: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_extract_image_and_caption0\output\generated_20260309_120000.png
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+#fitness #travel #
+14:25:29 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Test caption
+HASHTAGS: #test #pytest
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Test caption
+
+#test #pytest
+14:25:29 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Morning workout in Bali 🌴
+HASHTAGS: #bali #fitness #travel #morning #wellness
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+14:25:29 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Morning workout in Bali 🌴
+
+#bali #fitness #travel #morning #wellness
+14:25:29 │ INFO     │ genfluence               │ [review] User APPROVED the post
+14:25:29 │ INFO     │ genfluence               │ [review] User REJECTED – will regenerate
+14:25:29 │ INFO     │ genfluence               │ [review] User APPROVED the post
+14:25:29 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness 2026
+14:25:29 │ INFO     │ genfluence               │ [google_search] Success – response length: 67 chars
+14:25:29 │ DEBUG    │ genfluence               │ [google_search] Response preview: Top 5 fitness trends: HIIT, yoga, cold plunge, zone 2, calisthenics
+14:25:29 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=cache test query xyz123
+14:25:29 │ INFO     │ genfluence               │ [google_search] Success – response length: 13 chars
+14:25:29 │ DEBUG    │ genfluence               │ [google_search] Response preview: Cached result
+14:25:29 │ INFO     │ genfluence               │ [google_search] CACHE HIT for: cache test query xyz123
+14:25:29 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=will fail query abc789
+14:25:29 │ ERROR    │ genfluence               │ [google_search] FAILED: API quota exceeded
+14:25:29 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 44, in google_search
+    resp = model.generate_content(
+        [{"role": "user", "parts": [{"text": f"Search the web and summarize: {query}"}]}]
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+Exception: API quota exceeded
+
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A fitness influencer doing yoga on a rooftop
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (2 bytes)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260309_142529.png (0.1 KB)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 429 (3 bytes)
+14:25:29 │ ERROR    │ genfluence               │ [generate_image] RATE LIMITED (429):
+Quota exhausted
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 500 (3 bytes)
+14:25:29 │ ERROR    │ genfluence               │ [generate_image] API ERROR HTTP 500:
+Internal server error
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+14:25:29 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+14:25:29 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+14:25:29 │ ERROR    │ genfluence               │ [generate_image] NETWORK ERROR: Connection refused
+14:25:29 │ DEBUG    │ genfluence               │ [generate_image] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\nano_banana_tool.py", line 85, in generate_image
+    resp = requests.post(
+        url,
+    ...<2 lines>...
+        timeout=180,
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: Connection refused
+
+14:25:29 │ INFO     │ genfluence               │ Config loaded
+14:25:29 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+14:25:29 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+14:25:29 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+14:25:29 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_preflight_login_missing_c0\character.png
+14:25:29 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = (not set)
+14:25:29 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_preflight_login_missing_c0\output
+14:25:29 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_post_to_instagram_file_no0\nonexistent.png
+14:25:29 │ DEBUG    │ genfluence               │ [instagram] Caption: test caption
+14:25:29 │ ERROR    │ genfluence               │ [instagram] Image file NOT FOUND: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_post_to_instagram_file_no0\nonexistent.png
+14:25:29 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-9\test_post_to_instagram_success0\output\generated_20260309_120000.png
+14:25:29 │ DEBUG    │ genfluence               │ [instagram] Caption: Test caption #fitness
+14:25:29 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260309_120000.png (0.2 KB)
+14:25:29 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+14:25:29 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+14:25:29 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/ABC123XYZ/
