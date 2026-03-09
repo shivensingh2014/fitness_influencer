@@ -1,5 +1,5 @@
 # 🧠 Genfluence – Codebase Context File
-> **Last updated:** March 5, 2026 (added post-type randomiser + diverse influencer persona)  
+> **Last updated:** March 9, 2026 (self-contained requirements.txt, overrides.txt, copilot instructions)  
 > **Purpose:** Quick reference for AI assistants and developers. Read this FIRST before modifying any code.
 >
 > ⚠️ **MAINTENANCE RULE:** This file must be updated whenever the code structure changes.  
@@ -33,7 +33,8 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 ├── config.py                      ← All env vars, paths, API keys (reads .env)
 ├── llm.py                         ← LLM model string export (used by agents)
 ├── logger.py                      ← Centralised logger → console + output/genfluence.log
-├── requirements.txt               ← pip dependencies
+├── requirements.txt               ← pip dependencies (self-contained)
+├── overrides.txt                  ← uv override for pydantic version conflict
 ├── run.bat                        ← Windows batch launcher
 ├── .env                           ← Secrets (GEMINI_API_KEY, IG creds, etc.)
 ├── .ig_session.json               ← Cached Instagram session (auto-generated, gitignored)
@@ -46,8 +47,10 @@ fitness_influencer_crew/           ← PROJECT ROOT (run from here)
 │   ├── pre-commit                 ← Bash: runs pytest before every commit
 │   └── pre-commit.ps1             ← PowerShell: same hook for Windows
 │
-├── .github/workflows/             ← GitHub Actions CI
-│   └── tests.yml                  ← Runs tests on push/PR (Win + Mac + Linux)
+├── .github/
+│   ├── copilot-instructions.md    ← Copilot reads this automatically every session
+│   └── workflows/
+│       └── tests.yml              ← Runs tests on push/PR to main (Win + Mac + Linux)
 │
 ├── agents/                        ← CrewAI Agent definitions (one per file)
 │   ├── researcher.py              ← Fitness Trend Researcher (uses google_search tool)
@@ -221,8 +224,9 @@ Config also exports: `BASE_DIR`, `ASSETS_DIR`, `OUTPUT_DIR` (as Path objects, au
 
 ## 📦 Dependencies
 
-All deps live in the **repo-root** `requirements.txt` (both per-project files reference it via `-r ../requirements.txt`).  
-Managed with **uv** — see repo-root `README.md` for setup instructions.
+All deps live in `requirements.txt` at the project root (self-contained, no parent references).  
+Managed with **uv** — use `uv pip install -r requirements.txt --override overrides.txt`.  
+`overrides.txt` resolves the pydantic version conflict between crewai and instagrapi.
 
 ```
 crewai==1.9.3
@@ -236,8 +240,6 @@ instagrapi==2.3.0
 pydantic==2.11.10
 streamlit
 ```
-
-Full lock file: `../requirements-lock.txt`
 
 ---
 
@@ -357,4 +359,5 @@ To skip tests for a quick WIP commit: `git commit --no-verify`
 ---
 
 **Last updated:** March 9, 2026  
-**Maintainer:** Update this file whenever you modify agents, tasks, tools, or pipeline flow.
+**Maintainer:** Update this file whenever you modify agents, tasks, tools, pipeline flow, or dependencies.  
+**Auto-read by Copilot** via `.github/copilot-instructions.md`.

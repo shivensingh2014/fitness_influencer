@@ -19,6 +19,7 @@ Built with **[CrewAI](https://docs.crewai.com/)** · Powered by **Google Gemini*
 - [Testing](#-testing)
 - [Pre-commit Hook Setup](#-pre-commit-hook-setup)
 - [CI / GitHub Actions](#-ci--github-actions)
+- [Copilot Context](#-copilot-context)
 - [Project Structure](#-project-structure)
 - [Troubleshooting](#-troubleshooting)
 - [License](#-license)
@@ -287,12 +288,49 @@ git commit --no-verify -m "WIP: quick save"
 
 ## ☁️ CI / GitHub Actions
 
-A GitHub Actions workflow at `.github/workflows/tests.yml` runs the test suite automatically on:
+A GitHub Actions workflow at `.github/workflows/tests.yml` runs the full test suite automatically.
 
-- **Push** to `main`, `master`, or `develop`
-- **Pull requests** targeting those branches
+| Trigger | When |
+|---------|------|
+| **Push** | Every push to `main` |
+| **Pull Request** | Every PR targeting `main` |
 
-Tests run on **3 platforms** in parallel: Ubuntu, Windows, and macOS — all with Python 3.13 and uv.
+Tests run on **3 platforms in parallel** with `fail-fast: false` (all finish even if one fails):
+
+| Runner | OS | Python |
+|--------|----|--------|
+| `ubuntu-latest` | Linux | 3.13 |
+| `windows-latest` | Windows | 3.13 |
+| `macos-latest` | macOS | 3.13 |
+
+**What the workflow does:**
+1. Checks out the code
+2. Installs `uv` + Python 3.13
+3. Creates a venv and installs dependencies (`requirements.txt` + `overrides.txt`)
+4. Runs `pytest tests/ -v --tb=short` with safe dummy credentials
+5. Reports pass/fail on the commit or PR status check
+
+> Results appear as ✅ / ❌ status checks on your commits and pull requests in GitHub.
+
+---
+
+## 🤖 Copilot Context
+
+Two files give GitHub Copilot full project understanding in every conversation:
+
+| File | Purpose |
+|------|---------|
+| `.github/copilot-instructions.md` | **Auto-read by Copilot** at the start of every chat. Sets code style, architecture rules, testing rules, and tells Copilot to read the context file. |
+| `CODEBASE_CONTEXT.md` | Deep-dive reference: full architecture, pipeline flow, agent/task/tool details, config, dependencies, testing strategy, and known gotchas. |
+
+**How it works:**
+```
+Copilot starts → reads .github/copilot-instructions.md (automatic)
+              → instructed to read CODEBASE_CONTEXT.md (full context)
+              → understands the entire project before answering
+```
+
+> ⚠️ **Maintenance rule:** When you change agents, tasks, tools, pipeline flow, config variables, or dependencies — update `CODEBASE_CONTEXT.md` to match. This is enforced by the copilot instructions.
 
 ---
 
@@ -319,7 +357,9 @@ fitness_influencer_crew/
 ├── output/                 # Generated images + logs
 │
 ├── .githooks/              # Git hooks (pre-commit)
-└── .github/workflows/      # GitHub Actions CI
+├── .github/
+│   ├── copilot-instructions.md  # Copilot reads this automatically
+│   └── workflows/tests.yml      # GitHub Actions CI
 ```
 
 ---

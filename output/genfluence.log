@@ -1749,3 +1749,181 @@ requests.exceptions.RequestException: Connection refused
 13:51:47 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
 13:51:47 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
 13:51:47 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/ABC123XYZ/
+13:53:12 │ INFO     │ genfluence               │ Config loaded
+13:53:12 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+13:53:12 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+13:53:12 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+13:53:12 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_is_agent_instance0\character.png
+13:53:12 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = test_user
+13:53:12 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_is_agent_instance0\output
+13:53:14 │ INFO     │ genfluence               │ Test message from pytest – ignore
+13:53:14 │ INFO     │ genfluence               │ Loading agents…
+13:53:14 │ INFO     │ genfluence               │ All 5 agents loaded
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building GENERATION crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │   Task 1/4  ✔  Research
+13:53:14 │ INFO     │ genfluence               │   Task 2/4  ✔  Prompt
+13:53:14 │ INFO     │ genfluence               │   Task 3/4  ✔  Image Gen
+13:53:14 │ INFO     │ genfluence               │   Task 4/4  ✔  Caption + Hashtags
+13:53:14 │ INFO     │ genfluence               │ Generation crew built – 4 agents, 4 tasks, sequential process
+13:53:14 │ INFO     │ genfluence               │ Building POSTING crew…
+13:53:14 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:53:14 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:53:14 │ INFO     │ genfluence               │ Building POSTING crew…
+13:53:14 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:53:14 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:53:14 │ INFO     │ genfluence               │ Building POSTING crew…
+13:53:14 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:53:14 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:53:14 │ INFO     │ genfluence               │ Building POSTING crew…
+13:53:14 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:53:14 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:53:14 │ INFO     │ genfluence               │ Building POSTING crew…
+13:53:14 │ INFO     │ genfluence               │   Task 1/1  ✔  Instagram Post
+13:53:14 │ INFO     │ genfluence               │ Posting crew built – 1 agent, 1 task
+13:53:14 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+13:53:14 │ INFO     │ genfluence               │ Building full crew – wiring tasks…
+13:53:15 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🤝 Partner / Group Workout
+13:53:15 │ INFO     │ genfluence               │ [post_types] Randomly selected: 🏖️ Beach / Pool Recovery Day
+13:53:15 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+Generated image at C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_extract_image_and_caption0\output\generated_20260309_120000.png
+
+CAPTION: Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+HASHTAGS: #fitness #travel #tokyo #motivation #grind
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted image_path: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_extract_image_and_caption0\output\generated_20260309_120000.png
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Rise and grind in Tokyo 🏙️💪 Nothing beats a sunrise workout with a skyline view.
+
+#fitness #travel #
+13:53:15 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Test caption
+HASHTAGS: #test #pytest
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Test caption
+
+#test #pytest
+13:53:15 │ DEBUG    │ genfluence               │ [review] Raw crew output:
+CAPTION: Morning workout in Bali 🌴
+HASHTAGS: #bali #fitness #travel #morning #wellness
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted image_path: (not found)
+13:53:15 │ INFO     │ genfluence               │ [review] Extracted caption (first 100 chars): Morning workout in Bali 🌴
+
+#bali #fitness #travel #morning #wellness
+13:53:15 │ INFO     │ genfluence               │ [review] User APPROVED the post
+13:53:15 │ INFO     │ genfluence               │ [review] User REJECTED – will regenerate
+13:53:15 │ INFO     │ genfluence               │ [review] User APPROVED the post
+13:53:15 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=trending fitness 2026
+13:53:15 │ INFO     │ genfluence               │ [google_search] Success – response length: 67 chars
+13:53:15 │ DEBUG    │ genfluence               │ [google_search] Response preview: Top 5 fitness trends: HIIT, yoga, cold plunge, zone 2, calisthenics
+13:53:15 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=cache test query xyz123
+13:53:15 │ INFO     │ genfluence               │ [google_search] Success – response length: 13 chars
+13:53:15 │ DEBUG    │ genfluence               │ [google_search] Response preview: Cached result
+13:53:15 │ INFO     │ genfluence               │ [google_search] CACHE HIT for: cache test query xyz123
+13:53:15 │ INFO     │ genfluence               │ [google_search] Calling Gemini (gemini-2.5-flash-lite + grounding) query=will fail query abc789
+13:53:15 │ ERROR    │ genfluence               │ [google_search] FAILED: API quota exceeded
+13:53:15 │ DEBUG    │ genfluence               │ [google_search] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\google_search_tool.py", line 44, in google_search
+    resp = model.generate_content(
+        [{"role": "user", "parts": [{"text": f"Search the web and summarize: {query}"}]}]
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+Exception: API quota exceeded
+
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Called with prompt: A fitness influencer doing yoga on a rooftop
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 200 (2 bytes)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] SUCCESS – saved generated_20260309_135315.png (0.1 KB)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 429 (3 bytes)
+13:53:15 │ ERROR    │ genfluence               │ [generate_image] RATE LIMITED (429):
+Quota exhausted
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Response: HTTP 500 (3 bytes)
+13:53:15 │ ERROR    │ genfluence               │ [generate_image] API ERROR HTTP 500:
+Internal server error
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Called with prompt: test prompt
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Loaded character image: character.png (0.1 KB, image/png)
+13:53:15 │ INFO     │ genfluence               │ [generate_image] API model: gemini-2.5-flash-image
+13:53:15 │ INFO     │ genfluence               │ [generate_image] Sending request to Gemini Image API…
+13:53:15 │ ERROR    │ genfluence               │ [generate_image] NETWORK ERROR: Connection refused
+13:53:15 │ DEBUG    │ genfluence               │ [generate_image] Traceback:
+Traceback (most recent call last):
+  File "C:\Users\FZD3ZSE\OneDrive - Volkswagen AG\shiv\genfluence\fitness_influencer_crew\utils\nano_banana_tool.py", line 85, in generate_image
+    resp = requests.post(
+        url,
+    ...<2 lines>...
+        timeout=180,
+    )
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\FZD3ZSE\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+requests.exceptions.RequestException: Connection refused
+
+13:53:15 │ INFO     │ genfluence               │ Config loaded
+13:53:15 │ DEBUG    │ genfluence               │   GEMINI_API_KEY    = ***1234
+13:53:15 │ DEBUG    │ genfluence               │   GEMINI_LLM_MODEL  = gemini/gemini-2.5-flash-lite
+13:53:15 │ DEBUG    │ genfluence               │   IMAGE_GEN_MODEL   = gemini-2.5-flash-image
+13:53:15 │ DEBUG    │ genfluence               │   BASE_CHARACTER_IMAGE = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_preflight_login_missing_c0\character.png
+13:53:15 │ DEBUG    │ genfluence               │   INSTAGRAM_USERNAME = (not set)
+13:53:15 │ DEBUG    │ genfluence               │   OUTPUT_DIR        = C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_preflight_login_missing_c0\output
+13:53:15 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_post_to_instagram_file_no0\nonexistent.png
+13:53:15 │ DEBUG    │ genfluence               │ [instagram] Caption: test caption
+13:53:15 │ ERROR    │ genfluence               │ [instagram] Image file NOT FOUND: C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_post_to_instagram_file_no0\nonexistent.png
+13:53:15 │ INFO     │ genfluence               │ [instagram] Called with image_path=C:\Users\FZD3ZSE\AppData\Local\Temp\pytest-of-FZD3ZSE\pytest-4\test_post_to_instagram_success0\output\generated_20260309_120000.png
+13:53:15 │ DEBUG    │ genfluence               │ [instagram] Caption: Test caption #fitness
+13:53:15 │ INFO     │ genfluence               │ [instagram] Image OK: generated_20260309_120000.png (0.2 KB)
+13:53:15 │ INFO     │ genfluence               │ [instagram] Reusing pre-authenticated client
+13:53:15 │ INFO     │ genfluence               │ [instagram] Upload attempt 1…
+13:53:15 │ INFO     │ genfluence               │ [instagram] SUCCESS – posted: https://www.instagram.com/p/ABC123XYZ/

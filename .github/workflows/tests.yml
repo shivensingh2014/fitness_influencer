@@ -1,13 +1,13 @@
-# ──────────────────────────────────────────────────────
-# Genfluence – CI: Run tests on every push & PR
-# ──────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
+# Genfluence – CI: Run tests on every push to main & on PRs
+# ──────────────────────────────────────────────────────────────
 name: Tests
 
 on:
   push:
-    branches: [main, master, develop]
+    branches: [main]
   pull_request:
-    branches: [main, master, develop]
+    branches: [main]
 
 jobs:
   test:
@@ -34,15 +34,16 @@ jobs:
           uv pip install -r requirements.txt --override overrides.txt
 
       - name: Run tests
-        working-directory: fitness_influencer_crew
         shell: bash
         env:
           GEMINI_API_KEY: "test-dummy-key"
-          IG_USERNAME: "test_user"
-          IG_PASSWORD: "test_pass"
+          GEMINI_LLM_MODEL: "gemini/gemini-2.5-flash-lite"
+          IMAGE_GEN_MODEL: "gemini-2.5-flash-image"
+          INSTAGRAM_USERNAME: "test_user"
+          INSTAGRAM_PASSWORD: "test_pass"
         run: |
           if [ "$RUNNER_OS" == "Windows" ]; then
-            ../.venv/Scripts/python.exe -m pytest tests/ -v --tb=short
+            .venv/Scripts/python.exe -m pytest tests/ -v --tb=short
           else
-            ../.venv/bin/python -m pytest tests/ -v --tb=short
+            .venv/bin/python -m pytest tests/ -v --tb=short
           fi
