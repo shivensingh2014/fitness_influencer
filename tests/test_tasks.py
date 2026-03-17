@@ -37,13 +37,22 @@ class TestResearchTask:
     def test_description_has_placeholders(self, mock_agent):
         from tasks.research_task import create_research_task
         task = create_research_task(mock_agent)
-        assert "{post_type_brief}" in task.description
-        assert "{creative_direction}" in task.description
+        assert "strategy brief" in task.description.lower()
+        assert "context" in task.description.lower()
 
     def test_has_expected_output(self, mock_agent):
         from tasks.research_task import create_research_task
         task = create_research_task(mock_agent)
         assert task.expected_output and len(task.expected_output) > 10
+        assert "IDEA_1" in task.expected_output
+
+    def test_context_is_set_when_provided(self, mock_agent):
+        from tasks.research_task import create_research_task
+        from tasks.prompt_task import create_prompt_task
+
+        prompt = create_prompt_task(mock_agent, context=[])
+        task = create_research_task(mock_agent, context=[prompt])
+        assert prompt in task.context
 
 
 class TestPromptTask:
@@ -57,8 +66,9 @@ class TestPromptTask:
     def test_description_has_placeholders(self, mock_agent):
         from tasks.prompt_task import create_prompt_task
         task = create_prompt_task(mock_agent, context=[])
+        assert "{influencer_profile}" in task.description
+        assert "{content_format}" in task.description
         assert "{post_type_brief}" in task.description
-        assert "{creative_direction}" in task.description
 
     def test_context_is_set(self, mock_agent):
         from tasks.prompt_task import create_prompt_task
@@ -81,6 +91,7 @@ class TestGenerateImageTask:
         from tasks.generate_image_task import create_generate_image_task
         task = create_generate_image_task(mock_agent, context=[])
         assert "generate_image" in task.description.lower()
+        assert "{content_format}" in task.description
 
     def test_expected_output_mentions_path(self, mock_agent):
         from tasks.generate_image_task import create_generate_image_task
@@ -99,8 +110,9 @@ class TestCaptionHashtagTask:
     def test_description_has_placeholders(self, mock_agent):
         from tasks.caption_hashtag_task import create_caption_hashtag_task
         task = create_caption_hashtag_task(mock_agent, context=[])
+        assert "{influencer_profile}" in task.description
+        assert "{content_format}" in task.description
         assert "{post_type_brief}" in task.description
-        assert "{creative_direction}" in task.description
 
     def test_expected_output_has_format(self, mock_agent):
         from tasks.caption_hashtag_task import create_caption_hashtag_task
@@ -134,3 +146,41 @@ class TestPostToInstagramTask:
         from tasks.post_to_instagram_task import create_post_to_instagram_task
         task = create_post_to_instagram_task(mock_agent, context=[])
         assert "extract" in task.description.lower() or "context" in task.description.lower()
+
+
+class TestInfluencerStrategyTask:
+    """Tests for tasks/influencer_strategy_task.py."""
+
+    def test_returns_task_instance(self, mock_agent):
+        from tasks.influencer_strategy_task import create_influencer_strategy_task
+        task = create_influencer_strategy_task(mock_agent)
+        assert isinstance(task, Task)
+
+    def test_description_has_placeholders(self, mock_agent):
+        from tasks.influencer_strategy_task import create_influencer_strategy_task
+        task = create_influencer_strategy_task(mock_agent)
+        assert "{influencer_profile}" in task.description
+        assert "{content_format}" in task.description
+        assert "{post_type_brief}" not in task.description
+
+
+class TestInfluencerValidationTask:
+    """Tests for tasks/influencer_validation_task.py."""
+
+    def test_returns_task_instance(self, mock_agent):
+        from tasks.influencer_validation_task import create_influencer_validation_task
+        task = create_influencer_validation_task(mock_agent, context=[])
+        assert isinstance(task, Task)
+
+    def test_context_is_set(self, mock_agent):
+        from tasks.influencer_validation_task import create_influencer_validation_task
+        from tasks.caption_hashtag_task import create_caption_hashtag_task
+
+        caption = create_caption_hashtag_task(mock_agent, context=[])
+        task = create_influencer_validation_task(mock_agent, context=[caption])
+        assert caption in task.context
+
+    def test_expected_output_mentions_validation(self, mock_agent):
+        from tasks.influencer_validation_task import create_influencer_validation_task
+        task = create_influencer_validation_task(mock_agent, context=[])
+        assert "Validation" in task.expected_output

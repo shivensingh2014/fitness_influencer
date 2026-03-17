@@ -59,6 +59,40 @@ class TestPostTypes:
 
 
 # ═══════════════════════════════════════════════════════════════════════
+#  influencer_context.py
+# ═══════════════════════════════════════════════════════════════════════
+
+class TestInfluencerContext:
+    """Tests for utils/influencer_context.py."""
+
+    def test_load_influencer_profiles_reads_txt_files(self, tmp_path):
+        context_dir = tmp_path / "influencer_context"
+        context_dir.mkdir(parents=True, exist_ok=True)
+        (context_dir / "Aisha.txt").write_text("Aisha profile details", encoding="utf-8")
+        (context_dir / "Varun.txt").write_text("Varun profile details", encoding="utf-8")
+
+        with patch("utils.influencer_context.INFLUENCER_CONTEXT_DIR", context_dir):
+            from utils.influencer_context import load_influencer_profiles
+            profiles = load_influencer_profiles()
+
+        assert "Aisha" in profiles
+        assert "Varun" in profiles
+        assert "Aisha profile" in profiles["Aisha"]
+
+    def test_load_influencer_profiles_handles_empty_file(self, tmp_path):
+        context_dir = tmp_path / "influencer_context"
+        context_dir.mkdir(parents=True, exist_ok=True)
+        (context_dir / "Billa.txt").write_text("", encoding="utf-8")
+
+        with patch("utils.influencer_context.INFLUENCER_CONTEXT_DIR", context_dir):
+            from utils.influencer_context import load_influencer_profiles
+            profiles = load_influencer_profiles()
+
+        assert "Billa" in profiles
+        assert "No detailed profile provided yet" in profiles["Billa"]
+
+
+# ═══════════════════════════════════════════════════════════════════════
 #  review.py
 # ═══════════════════════════════════════════════════════════════════════
 
@@ -171,6 +205,27 @@ class TestGoogleSearchTool:
 
         result = google_search.run("will fail query abc789")
         assert "ERROR" in result or "error" in result.lower()
+
+    @patch("utils.google_search_tool.genai")
+    def test_google_search_accepts_optional_mode_arg(self, mock_genai):
+        """Tool should tolerate optional mode argument for agent-call compatibility."""
+        mock_model = MagicMock()
+        mock_resp = MagicMock()
+        mock_resp.text = "Mode-compatible result"
+        mock_model.generate_content.return_value = mock_resp
+        mock_genai.GenerativeModel.return_value = mock_model
+
+        from utils.google_search_tool import google_search, _search_cache
+        _search_cache.clear()
+
+        result = google_search.run("fitness trends this week", mode="web")
+        assert "Mode-compatible result" in result
+
+    def test_google_search_empty_query_returns_error(self):
+        """Empty query should fail fast with a deterministic error string."""
+        from utils.google_search_tool import google_search
+        result = google_search.run("   ")
+        assert "ERROR" in result
 
 
 # ═══════════════════════════════════════════════════════════════════════

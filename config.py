@@ -1,5 +1,5 @@
 """
-Central configuration for the Genfluence fitness-influencer crew.
+Central configuration for the Genfluence fitness-crew.
 All environment variables and paths are managed here.
 """
 import os
@@ -13,10 +13,14 @@ load_dotenv()
 BASE_DIR = Path(__file__).parent
 ASSETS_DIR = BASE_DIR / "assets"
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", str(BASE_DIR / "output")))
+INFLUENCER_CONTEXT_DIR = Path(
+    os.getenv("INFLUENCER_CONTEXT_DIR", str(BASE_DIR / "influencer_context"))
+)
 
 # Ensure directories exist
 ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+INFLUENCER_CONTEXT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── API Keys ───────────────────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
@@ -46,3 +50,4 @@ log.debug("  IMAGE_GEN_MODEL   = %s", IMAGE_GEN_MODEL)
 log.debug("  BASE_CHARACTER_IMAGE = %s", BASE_CHARACTER_IMAGE)
 log.debug("  INSTAGRAM_USERNAME = %s", INSTAGRAM_USERNAME or "(not set)")
 log.debug("  OUTPUT_DIR        = %s", OUTPUT_DIR)
+log.debug("  INFLUENCER_CONTEXT_DIR = %s", INFLUENCER_CONTEXT_DIR)

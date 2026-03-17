@@ -2,8 +2,8 @@
 🚀 Genfluence – One-Click AI Fitness Influencer Pipeline
 
 Run this script to:
-  0. 🎯  Give your creative direction (guides every agent)
-  0b.🎲  Randomly select a post type (travel, gym, wellness, etc.)
+    0. 🧍  Select influencer + content type
+    0b.🎲  Randomly select a post type (travel, gym, wellness, etc.)
   1. 🔐  Verify Instagram login (fail-fast before burning API quota)
   2. Research trending fitness & lifestyle content
   3. Create an optimised Nano Banana image-generation prompt
@@ -27,7 +27,7 @@ def main():
 ╔══════════════════════════════════════════════════════════╗
 ║        🚀  GENFLUENCE – AI Influencer Pipeline          ║
 ╠══════════════════════════════════════════════════════════╣
-║  0. 🎯  Your creative direction (guides the whole crew) ║
+║  0. 🧍  Select influencer + content type                 ║
 ║  1. 🔐  Verify Instagram login (fail-fast)              ║
 ║  2. 🔍  Research trending fitness content               ║
 ║  3. ✏️   Create Nano Banana image prompt                 ║
@@ -41,22 +41,40 @@ def main():
     log.info("═" * 50)
     log.info("Pipeline started")
 
-    # ── Step 0: Creative Direction ────────────────────────────────────
-    print("🎯  What's your vision for today's post?")
-    print("   Describe the vibe, setting, outfit, mood, caption tone – anything!")
-    print("   Examples:")
-    print('     • "Outdoor sunrise yoga on a mountain, peaceful and empowering"')
-    print('     • "Intense gym workout, dark moody lighting, motivational caption"')
-    print('     • "Beach run in summer sportswear, fun and energetic vibes"')
-    print()
-    creative_direction = input("👉  Your direction: ").strip()
+    # ── Step -1: Select Influencer Profile ────────────────────────────
+    from utils.influencer_context import load_influencer_profiles
 
-    if not creative_direction:
-        creative_direction = "Trending fitness content – choose the best idea based on research"
-        print(f"   (No direction given, using default: {creative_direction})")
+    influencer_profiles = load_influencer_profiles()
+    influencer_names = list(influencer_profiles.keys())
 
-    log.info("Creative direction: %s", creative_direction)
-    print(f"\n✅  Direction locked: \"{creative_direction}\"\n")
+    print("🧍  Select the influencer profile:")
+    for idx, name in enumerate(influencer_names, start=1):
+        print(f"   {idx}. {name}")
+
+    selected_raw = input("👉  Pick influencer number (default 1): ").strip()
+    selected_idx = 1
+    if selected_raw.isdigit():
+        candidate = int(selected_raw)
+        if 1 <= candidate <= len(influencer_names):
+            selected_idx = candidate
+
+    selected_influencer = influencer_names[selected_idx - 1]
+    influencer_profile = influencer_profiles[selected_influencer]
+    log.info("Selected influencer: %s", selected_influencer)
+    print(f"✅  Influencer selected: {selected_influencer}\n")
+
+    # ── Step -0.5: Select Content Type ───────────────────────────────
+    print("🎬  Select content type:")
+    print("   1. post")
+    print("   2. carousel")
+    print("   3. reel")
+    content_raw = input("👉  Pick content type (default 1): ").strip()
+    content_format = {"1": "post", "2": "carousel", "3": "reel"}.get(
+        content_raw,
+        "post",
+    )
+    log.info("Selected content format: %s", content_format)
+    print(f"✅  Content type selected: {content_format}\n")
 
     # ── Pick a random post type ───────────────────────────────────────
     from utils.post_types import pick_random_post_type
@@ -158,11 +176,12 @@ def main():
 
         # ── Phase 1: Generate image + caption ─────────────────────────
         try:
-            gen_crew = build_generation_crew()
+            gen_crew = build_generation_crew(influencer_profile=influencer_profile)
             gen_result = gen_crew.kickoff(
                 inputs={
-                    "creative_direction": creative_direction,
                     "post_type_brief": post_type["brief"],
+                    "influencer_profile": influencer_profile,
+                    "content_format": content_format,
                 }
             )
             log.info("Generation phase completed")

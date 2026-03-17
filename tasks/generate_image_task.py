@@ -6,11 +6,11 @@ def create_generate_image_task(agent, context):
     return Task(
         description=(
             "TODAY'S POST TYPE: {post_type_brief}\n\n"
-            "CREATIVE DIRECTION: {creative_direction}\n\n"
+            "OUTPUT FORMAT: {content_format}\n\n"
             "Take the image-generation prompt from the Prompt Engineer's "
             "output (provided in context) and call the 'generate_image' tool "
             "with that exact prompt text. The prompt already incorporates "
-            "the post type and creative direction.\n\n"
+            "the post type and strategy context.\n\n"
             "The tool automatically:\n"
             "  1. Loads the base character reference image\n"
             "  2. Sends everything to the Nano Banana (Gemini) API\n"

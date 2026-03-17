@@ -1,5 +1,5 @@
 """
-Tests for all 5 CrewAI agents – validates their structure, attributes,
+Tests for all CrewAI agents – validates their structure, attributes,
 and LLM configuration without making any API calls.
 """
 import sys
@@ -34,6 +34,12 @@ class TestResearcher:
     def test_has_role(self):
         from agents.researcher import researcher
         assert researcher.role and len(researcher.role) > 5
+
+    def test_factory_backstory_override(self):
+        from agents.researcher import create_researcher
+        override = "BRAND_INTENT: Build simple home-workout ideas"
+        dynamic_researcher = create_researcher(override)
+        assert override in dynamic_researcher.backstory
 
 
 class TestPromptCreator:
@@ -106,6 +112,28 @@ class TestInstagramPoster:
         assert instagram_poster.allow_delegation is False
 
 
+class TestInfluencerPersona:
+    """Tests for agents/influencer_persona.py."""
+
+    def test_is_agent_instance(self):
+        from agents.influencer_persona import influencer_persona
+        assert isinstance(influencer_persona, Agent)
+
+    def test_has_no_tools(self):
+        from agents.influencer_persona import influencer_persona
+        assert len(influencer_persona.tools) == 0
+
+    def test_delegation_disabled(self):
+        from agents.influencer_persona import influencer_persona
+        assert influencer_persona.allow_delegation is False
+
+    def test_factory_injects_profile_into_backstory(self):
+        from agents.influencer_persona import create_influencer_persona
+        profile = "Name: Aisha. Audience: women fitness beginners."
+        agent = create_influencer_persona(profile)
+        assert profile in agent.backstory
+
+
 class TestAllAgentsConventions:
     """Cross-cutting checks that enforce project conventions on ALL agents."""
 
@@ -116,7 +144,15 @@ class TestAllAgentsConventions:
         from agents.image_generator import image_generator
         from agents.caption_creator import caption_creator
         from agents.instagram_poster import instagram_poster
-        return [researcher, prompt_creator, image_generator, caption_creator, instagram_poster]
+        from agents.influencer_persona import influencer_persona
+        return [
+            researcher,
+            prompt_creator,
+            image_generator,
+            caption_creator,
+            instagram_poster,
+            influencer_persona,
+        ]
 
     def test_all_agents_are_agent_instances(self, all_agents):
         for agent in all_agents:

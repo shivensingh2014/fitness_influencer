@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-#  Genfluence – fitness_influencer_crew dependencies
+#  Genfluence – fitness_crew dependencies
 #  Install with:  uv pip install -r requirements.txt
 #  Works on:      macOS, Linux, and Windows
 # ─────────────────────────────────────────────────────────────

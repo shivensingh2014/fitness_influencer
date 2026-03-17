@@ -94,7 +94,7 @@ uv venv .venv --python 3.13
 uv pip install -r requirements.txt --override overrides.txt
 
 # 5. Navigate to the project
-cd fitness_influencer_crew
+cd fitness_crew
 
 # 6. Copy the example env file and fill in your keys
 Copy-Item .env.example .env
@@ -124,7 +124,7 @@ source .venv/bin/activate
 uv pip install -r requirements.txt --override overrides.txt
 
 # 5. Navigate to the project
-cd fitness_influencer_crew
+cd fitness_crew
 
 # 6. Copy the example env file and fill in your keys
 cp .env.example .env
@@ -151,7 +151,7 @@ pip install -r requirements.txt
 
 ## ⚙️ Configuration
 
-Create a `.env` file inside `fitness_influencer_crew/` (or copy `.env.example`):
+Create a `.env` file inside `fitness_crew/` (or copy `.env.example`):
 
 ```dotenv
 # ── Gemini API ────────────────────────────────────────
@@ -184,12 +184,12 @@ OUTPUT_DIR=output
 
 ## ▶️ Usage
 
-Always run from inside the `fitness_influencer_crew/` directory with the venv activated.
+Always run from inside the `fitness_crew/` directory with the venv activated.
 
 ### CLI Mode
 
 ```bash
-cd fitness_influencer_crew
+cd fitness_crew
 python main.py
 ```
 
@@ -207,7 +207,7 @@ You'll be prompted for a **creative direction** (e.g., *"Morning yoga routine in
 ### Web UI (Streamlit)
 
 ```bash
-cd fitness_influencer_crew
+cd fitness_crew
 streamlit run streamlit_app.py
 ```
 
@@ -228,7 +228,7 @@ The project includes **89 automated tests** covering agents, tasks, tools, crew 
 ### Run all tests
 
 ```bash
-cd fitness_influencer_crew
+cd fitness_crew
 python -m pytest tests/ -v
 ```
 
@@ -266,13 +266,13 @@ A **pre-commit hook** runs the full test suite before every `git commit`. If any
 
 **Windows:**
 ```powershell
-cd fitness_influencer_crew
+cd fitness_crew
 .\setup-hooks.ps1
 ```
 
 **macOS / Linux:**
 ```bash
-cd fitness_influencer_crew
+cd fitness_crew
 bash setup-hooks.sh
 ```
 
@@ -337,7 +337,7 @@ Copilot starts → reads .github/copilot-instructions.md (automatic)
 ## 📁 Project Structure
 
 ```
-fitness_influencer_crew/
+fitness_crew/
 ├── main.py                 # CLI entry point
 ├── streamlit_app.py        # Web UI entry point
 ├── crew.py                 # CrewAI crew builders

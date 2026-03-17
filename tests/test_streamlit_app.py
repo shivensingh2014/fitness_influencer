@@ -52,6 +52,7 @@ def mock_streamlit():
     # Widgets return non-truthy defaults to prevent action branches
     mock_st.button.return_value = False
     mock_st.text_area.return_value = ""
+    mock_st.selectbox.return_value = "post"
 
     # st.columns returns context managers
     col_mock = MagicMock()
@@ -118,16 +119,29 @@ class TestSessionStateDefaults:
     def test_required_keys_present(self, app_module):
         """All keys needed by the 4-phase UI should exist."""
         required_keys = {
-            "phase", "creative_direction", "image_path", "caption",
+            "phase", "selected_influencer", "influencer_profile",
+            "influencer_confirmed", "content_setup_saved", "digital_twin_generated",
+            "strategy_brief", "idea_results", "idea_options", "selected_idea", "content_package", "content_format",
+            "image_path", "caption",
             "attempt", "max_attempts", "ig_logged_in", "preflight_done",
             "error", "post_result",
         }
         assert required_keys.issubset(app_module._DEFAULTS.keys())
 
+    def test_content_format_default(self, app_module):
+        assert app_module._DEFAULTS["content_format"] == "post"
+
+    def test_idea_defaults(self, app_module):
+        assert app_module._DEFAULTS["idea_options"] == []
+        assert app_module._DEFAULTS["selected_idea"] == ""
+
     def test_boolean_defaults(self, app_module):
         """Boolean flags should default to False."""
         assert app_module._DEFAULTS["ig_logged_in"] is False
         assert app_module._DEFAULTS["preflight_done"] is False
+        assert app_module._DEFAULTS["influencer_confirmed"] is False
+        assert app_module._DEFAULTS["content_setup_saved"] is False
+        assert app_module._DEFAULTS["digital_twin_generated"] is False
 
     def test_error_default_is_none(self, app_module):
         assert app_module._DEFAULTS["error"] is None
@@ -148,14 +162,15 @@ class TestHelperFunctions:
     def test_run_posting_exists(self, app_module):
         assert callable(app_module._run_posting)
 
-    def test_run_generation_accepts_two_args(self, app_module):
-        """_run_generation should accept (creative_direction, post_type_brief)."""
+    def test_run_generation_accepts_three_args(self, app_module):
+        """_run_generation should accept post type, influencer, and format."""
         import inspect
         sig = inspect.signature(app_module._run_generation)
         params = list(sig.parameters.keys())
-        assert len(params) == 2
-        assert "creative_direction" in params
+        assert len(params) == 3
         assert "post_type_brief" in params
+        assert "influencer_profile" in params
+        assert "content_format" in params
 
     def test_run_posting_accepts_two_args(self, app_module):
         """_run_posting should accept (image_path, caption)."""

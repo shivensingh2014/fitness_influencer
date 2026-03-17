@@ -24,12 +24,25 @@ _search_cache: dict[str, str] = {}
 
 
 @tool("google_search")
-def google_search(query: str) -> str:
+def google_search(query: str, mode: str = "") -> str:
     """
     Uses Gemini's Google Search grounding to fetch real-time information.
     Returns a concise textual summary for agents to consume.
     Results are cached so the same query never burns a second API call.
+
+    Args:
+        query: Plain natural-language search query.
+        mode: Optional compatibility arg. Ignored intentionally.
     """
+    query = (query or "").strip()
+    if not query:
+        return "ERROR: Google search failed – query is empty"
+
+    # Guardrails for overlong / malformed tool calls from agent loops.
+    query = " ".join(query.split())
+    if len(query) > 280:
+        query = query[:280]
+
     cache_key = hashlib.md5(query.lower().strip().encode()).hexdigest()
     if cache_key in _search_cache:
         log.info("[google_search] CACHE HIT for: %s", query[:80])
@@ -45,6 +58,8 @@ def google_search(query: str) -> str:
             [{"role": "user", "parts": [{"text": f"Search the web and summarize: {query}"}]}]
         )
         result = (resp.text or "").strip()
+        if not result:
+            result = "ERROR: Google search failed – empty response from provider"
         log.info("[google_search] Success – response length: %d chars", len(result))
         log.debug("[google_search] Response preview: %s", result[:200])
         _search_cache[cache_key] = result

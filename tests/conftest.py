@@ -1,5 +1,5 @@
 """
-Shared pytest fixtures for the fitness_influencer_crew test suite.
+Shared pytest fixtures for the fitness_crew test suite.
 All tests import from here automatically.
 """
 import os

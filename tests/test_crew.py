@@ -20,15 +20,15 @@ class TestBuildGenerationCrew:
         crew = build_generation_crew()
         assert isinstance(crew, Crew)
 
-    def test_has_4_agents(self):
+    def test_has_5_agents(self):
         from crew import build_generation_crew
         crew = build_generation_crew()
-        assert len(crew.agents) == 4
+        assert len(crew.agents) == 5
 
-    def test_has_4_tasks(self):
+    def test_has_6_tasks(self):
         from crew import build_generation_crew
         crew = build_generation_crew()
-        assert len(crew.tasks) == 4
+        assert len(crew.tasks) == 6
 
     def test_sequential_process(self):
         from crew import build_generation_crew
@@ -36,18 +36,16 @@ class TestBuildGenerationCrew:
         assert crew.process == Process.sequential
 
     def test_task_order_is_correct(self):
-        """Tasks should be in order: research → prompt → image → caption."""
+        """Tasks should be: strategy → research → prompt → image → caption → validation."""
         from crew import build_generation_crew
         crew = build_generation_crew()
         task_descriptions = [t.description for t in crew.tasks]
-        # Research task mentions "trending"
-        assert "trending" in task_descriptions[0].lower() or "research" in task_descriptions[0].lower()
-        # Prompt task mentions "image-generation prompt" or "Nano Banana"
-        assert "prompt" in task_descriptions[1].lower()
-        # Image gen task mentions "generate_image"
-        assert "generate_image" in task_descriptions[2].lower() or "image" in task_descriptions[2].lower()
-        # Caption task mentions "caption" or "hashtag"
-        assert "caption" in task_descriptions[3].lower()
+        assert "strategy brief" in task_descriptions[0].lower() or "persona" in task_descriptions[0].lower()
+        assert "trending" in task_descriptions[1].lower() or "research" in task_descriptions[1].lower()
+        assert "prompt" in task_descriptions[2].lower()
+        assert "generate_image" in task_descriptions[3].lower() or "image" in task_descriptions[3].lower()
+        assert "caption" in task_descriptions[4].lower()
+        assert "validate" in task_descriptions[5].lower() or "validation" in task_descriptions[5].lower()
 
     def test_agent_roles_are_distinct(self):
         from crew import build_generation_crew

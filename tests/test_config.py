@@ -45,10 +45,15 @@ class TestConfig:
         from config import ASSETS_DIR
         assert ASSETS_DIR.exists()
 
+    def test_influencer_context_dir_exists(self):
+        """INFLUENCER_CONTEXT_DIR should be auto-created by config.py."""
+        from config import INFLUENCER_CONTEXT_DIR
+        assert INFLUENCER_CONTEXT_DIR.exists()
+
     def test_base_dir_is_project_root(self):
-        """BASE_DIR should point to the fitness_influencer_crew directory."""
+        """BASE_DIR should point to the fitness_crew directory."""
         from config import BASE_DIR
-        assert BASE_DIR.name == "fitness_influencer_crew"
+        assert BASE_DIR.name == "fitness_crew"
 
 
 class TestLogger:

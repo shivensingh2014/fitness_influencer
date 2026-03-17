@@ -5,14 +5,12 @@ from crewai import Task
 def create_caption_hashtag_task(agent, context):
     return Task(
         description=(
-            "INFLUENCER PROFILE: A real fitness and lifestyle influencer who "
-            "travels the world, trains in iconic cities, and coaches online "
-            "as an AI fitness coach.\n\n"
+            "INFLUENCER PROFILE (selected by user):\n"
+            ">>> {influencer_profile} <<<\n\n"
             "TODAY'S POST TYPE (randomly selected):\n"
             "{post_type_brief}\n\n"
-            "CREATIVE DIRECTION FROM THE USER:\n"
-            ">>> {creative_direction} <<<\n\n"
-            "Based on the post type, creative direction, trend research, and "
+            "OUTPUT FORMAT SELECTED BY USER: {content_format}\n\n"
+            "Based on the post type, strategy brief, trend research, and "
             "image prompt (all in context), write:\n\n"
             "1. ONE short, authentic Instagram caption (1-3 sentences) that:\n"
             "   • Sounds like a REAL person, not a bot (warm, witty, relatable)\n"
