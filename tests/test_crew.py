@@ -5,6 +5,7 @@ These tests do NOT call any LLM or external API.
 """
 import sys
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 from crewai import Crew, Process
@@ -12,33 +13,41 @@ from crewai import Crew, Process
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 
+@pytest.fixture
+def _mock_influencer_load(monkeypatch):
+    """Mock load_influencer_profiles for generation crew tests."""
+    def fake_load(directory=None):
+        return {"TestInfluencer": "A test fitness influencer with expertise in functional training."}
+    monkeypatch.setattr("utils.influencer_context.load_influencer_profiles", fake_load)
+
+
 class TestBuildGenerationCrew:
     """Tests for build_generation_crew()."""
 
-    def test_returns_crew_instance(self):
+    def test_returns_crew_instance(self, _mock_influencer_load):
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         assert isinstance(crew, Crew)
 
-    def test_has_5_agents(self):
+    def test_has_5_agents(self, _mock_influencer_load):
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         assert len(crew.agents) == 5
 
-    def test_has_6_tasks(self):
+    def test_has_6_tasks(self, _mock_influencer_load):
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         assert len(crew.tasks) == 6
 
-    def test_sequential_process(self):
+    def test_sequential_process(self, _mock_influencer_load):
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         assert crew.process == Process.sequential
 
-    def test_task_order_is_correct(self):
+    def test_task_order_is_correct(self, _mock_influencer_load):
         """Tasks should be: strategy → research → prompt → image → caption → validation."""
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         task_descriptions = [t.description for t in crew.tasks]
         assert "strategy brief" in task_descriptions[0].lower() or "persona" in task_descriptions[0].lower()
         assert "trending" in task_descriptions[1].lower() or "research" in task_descriptions[1].lower()
@@ -47,9 +56,9 @@ class TestBuildGenerationCrew:
         assert "caption" in task_descriptions[4].lower()
         assert "validate" in task_descriptions[5].lower() or "validation" in task_descriptions[5].lower()
 
-    def test_agent_roles_are_distinct(self):
+    def test_agent_roles_are_distinct(self, _mock_influencer_load):
         from crew import build_generation_crew
-        crew = build_generation_crew()
+        crew = build_generation_crew("Test Influencer - Fitness expert from NYC")
         roles = [a.role for a in crew.agents]
         assert len(roles) == len(set(roles)), "Agents must have unique roles"
 

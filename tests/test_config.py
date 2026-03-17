@@ -51,9 +51,9 @@ class TestConfig:
         assert INFLUENCER_CONTEXT_DIR.exists()
 
     def test_base_dir_is_project_root(self):
-        """BASE_DIR should point to the fitness_crew directory."""
+        """BASE_DIR should point to the fitness_influencer_crew directory."""
         from config import BASE_DIR
-        assert BASE_DIR.name == "fitness_crew"
+        assert BASE_DIR.name == "fitness_influencer_crew"
 
 
 class TestLogger:

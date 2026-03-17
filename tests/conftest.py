@@ -35,6 +35,13 @@ def _set_env_defaults(monkeypatch, tmp_path):
     char_img.write_bytes(b"\x89PNG\r\n\x1a\n" + b"\x00" * 100)
 
     (tmp_path / "output").mkdir(exist_ok=True)
+    
+    # Reload config module to pick up mocked env vars
+    import sys
+    if "config" in sys.modules:
+        import importlib
+        import config
+        importlib.reload(config)
 
 
 @pytest.fixture
